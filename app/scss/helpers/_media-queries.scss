@@ -1,0 +1,52 @@
+$screen-320: 320px;
+$screen-500: 500px;
+$screen-768: 768px;
+$screen-1000: 1024px;
+$screen-1280: 1280px;
+$screen-max-width: 1440px;
+
+// => Base Media Queries
+
+@mixin screen-320 {
+	@media (max-width: #{$screen-500 - 1px}) {
+		@content;
+	}
+}
+
+@mixin screen-500 {
+	@media (max-width: #{$screen-768 - 1px}) {
+		@content;
+	}
+}
+
+@mixin screen-768 {
+	@media (max-width: #{$screen-1000 - 1px}) {
+		@content;
+	}
+}
+
+@mixin screen-1000 {
+	@media (max-width: #{$screen-1280 - 1px}) {
+		@content;
+	}
+}
+
+@mixin screen-1280 {
+	@media (max-width: #{$screen-max-media-width - 1px}) {
+		@content;
+	}
+}
+
+// ==> Other Media Queries
+
+@mixin screen-min($width) {
+	@media (min-width: $width + "px") {
+		@content;
+	}
+}
+
+@mixin screen-max($width) {
+	@media (max-width: $width + "px") {
+		@content;
+	}
+}

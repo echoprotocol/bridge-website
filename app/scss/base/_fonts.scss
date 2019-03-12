@@ -1,0 +1,79 @@
+$futura: "../fonts/FuturaNew";
+
+@font-face {
+	font-family: "FuturaNew";
+	font-style: normal;
+	font-weight: 400;
+	src: url("#{$futura}/FuturaNewBook/FuturaNewBook.eot");
+	src: url("#{$futura}/FuturaNewBook/FuturaNewBook.woff2") format("woff2"),
+	url("#{$futura}/FuturaNewBook/FuturaNewBook.woff") format("woff"),
+	url("#{$futura}/FuturaNewBook/FuturaNewBook.otf") format("opentype"),
+	url("#{$futura}/FuturaNewBook/FuturaNewBook.ttf") format("truetype"),
+	url("#{$futura}/FuturaNewBook/FuturaNewBook.svg#FuturaNewBook") format("svg");
+}
+
+@mixin futura-book {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: {
+		family: "FuturaNew";
+		weight: 400;
+	}
+}
+
+@font-face {
+	font-family: "FuturaNew";
+	font-style: normal;
+	font-weight: 500;
+	src: url("#{$futura}/FuturaNewMedium/FuturaNewMedium.eot");
+	src: url("#{$futura}/FuturaNewMedium/FuturaNewMedium.woff2") format("woff2"),
+	url("#{$futura}/FuturaNewMedium/FuturaNewMedium.woff") format("woff"),
+	url("#{$futura}/FuturaNewMedium/FuturaNewMedium.otf") format("opentype"),
+	url("#{$futura}/FuturaNewMedium/FuturaNewMedium.ttf") format("truetype"),
+	url("#{$futura}/FuturaNewMedium/FuturaNewMedium.svg#FuturaNewMedium") format("svg");
+}
+
+@mixin futura-medium {
+	font: {
+		family: "FuturaNew";
+		weight: 500;
+	}
+}
+
+@font-face {
+	font-family: "FuturaNew";
+	font-style: normal;
+	font-weight: 600;
+	src: url("#{$futura}/FuturaNewDemi/FuturaNewDemi.eot");
+	src: url("#{$futura}/FuturaNewDemi/FuturaNewDemi.woff2") format("woff2"),
+	url("#{$futura}/FuturaNewDemi/FuturaNewDemi.woff") format("woff"),
+	url("#{$futura}/FuturaNewDemi/FuturaNewDemi.otf") format("opentype"),
+	url("#{$futura}/FuturaNewDemi/FuturaNewDemi.ttf") format("truetype"),
+	url("#{$futura}/FuturaNewDemi/FuturaNewDemi.svg#FuturaNewDemi") format("svg");
+}
+
+@mixin futura-demi {
+	font: {
+		family: "FuturaNew";
+		weight: 600;
+	}
+}
+
+@font-face {
+	font-family: "FuturaNew";
+	font-style: normal;
+	font-weight: 700;
+	src: url("#{$futura}/FuturaNewBold/FuturaNewBold.eot");
+	src: url("#{$futura}/FuturaNewBold/FuturaNewBold.woff2") format("woff2"),
+	url("#{$futura}/FuturaNewBold/FuturaNewBold.woff") format("woff"),
+	url("#{$futura}/FuturaNewBold/FuturaNewBold.otf") format("opentype"),
+	url("#{$futura}/FuturaNewBold/FuturaNewBold.ttf") format("truetype"),
+	url("#{$futura}/FuturaNewBold/FuturaNewBold.svg#FuturaNewBold") format("svg");
+}
+
+@mixin futura-bold {
+	font: {
+		family: "FuturaNew";
+		weight: 700;
+	}
+}
