@@ -1,0 +1,122 @@
+.about-section {
+	@include screen-max(1300) {
+		height: auto;
+		padding: 80px 0;
+	}
+	@include screen-max(680) {
+		.btn-wrap-2 {
+			justify-content: center;
+
+			button {
+				padding: 0 50px;
+			}
+
+			button:not(:last-child) {
+				margin: 0 0 20px 0;
+			}
+		}
+	}
+	height: 1000px;
+	padding: 204px 0;
+	background-color: #e0e4e8;
+	background-image: url("../images/about-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.logo {
+		width: 100%;
+		max-width: 458px;
+	}
+}
+
+.about-wrap {
+	position: relative;
+	display: flex;
+
+	.column {
+		width: 100%;
+
+		&:nth-child(1) {
+			@include screen-max(1480) {
+				min-width: 620px;
+			}
+			@include screen-max(1350) {
+				min-width: 760px;
+				max-width: 760px;
+				margin: auto;
+			}
+			@include screen-max(900) {
+				min-width: auto;
+			}
+			min-width: 760px;
+		}
+
+		&:nth-child(2) {
+			@include screen-max(1480) {
+				align-items: center;
+				justify-content: center;
+				display: flex;
+			}
+			@include screen-max(1350) {
+				display: none;
+			}
+		}
+	}
+
+	.brg-screens {
+		@include screen-min(1755) {
+			position: absolute;
+			top: -48px;
+			right: -161px;
+		}
+		@include screen-max(1755) {
+			width: auto;
+			padding: 0 0 0 80px;
+		}
+
+		align-items: center;
+		justify-content: center;
+		display: flex;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.tagline {
+	@include futura-demi();
+	@include screen-max(900) {
+		line-height: 32px;
+	}
+	padding: 22px 0;
+	color: rgba(#344045, 0.5);
+	font-size: 21px;
+	letter-spacing: 5.2px; // 4.83px;
+	text-transform: uppercase;
+}
+
+.prezentation {
+	@include screen-max(1480) {
+		max-width: 620px;
+	}
+	@include screen-max(1350) {
+		max-width: 760px;
+	}
+	width: 100%;
+	max-width: 760px;
+	padding: 20px 0 48px;
+
+	p {
+		@include futura-medium();
+		margin: 14px 0;
+		color: #364147;
+		font-size: 24px;
+		letter-spacing: 1.44px;
+		line-height: 43px;
+
+		&:nth-child(1) {
+			margin: 24px 0 0;
+		}
+	}
+}

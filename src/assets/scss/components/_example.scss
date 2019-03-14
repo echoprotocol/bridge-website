@@ -1,0 +1,87 @@
+.example-section {
+	padding: 60px 0 80px;
+	background-color: #384549;
+}
+
+.example-code-scroll {
+	position: relative;
+	height: 420px;
+}
+
+.github-wrap {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.github {
+	@include futura-demi();
+	align-items: center;
+	display: flex;
+	margin: 0 0 40px;
+	color: #fff;
+	font-size: 28px;
+
+	img {
+		margin-right: 26px;
+	}
+}
+
+.flex-center {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.code-label {
+	@include futura-demi();
+	margin-bottom: 10px;
+	color: rgba(#fff, 0.5);
+	font-size: 16px;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+}
+
+@include screen-max(1350) {
+	.example-section {
+		padding: 80px 0;
+
+		.row {
+			flex-direction: column-reverse;
+		}
+	}
+
+	.scrollbar-container {
+		max-width: 760px;
+		margin: auto;
+	}
+
+	.code-label {
+		@include futura-bold();
+		margin-bottom: 40px;
+		font-size: 36px;
+		letter-spacing: 2px;
+		text-align: center;
+	}
+
+	.github-wrap {
+		margin-top: 50px;
+	}
+}
+
+@include screen-max(900) {
+	.example-section {
+		.row {
+			.col {
+				&:nth-child(2) {
+					display: none;
+				}
+			}
+		}
+
+		.github-wrap {
+			margin-top: 20px;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+.info-section {
+	display: flex;
+	height: 415px;
+	background-color: #e0e4e8;
+	background-image: url("../images/echo-bg.svg");
+	background-repeat: no-repeat;
+	background-position: 30.2% 52%;
+}
+
+.info-title {
+	@include futura-demi();
+	margin-bottom: 50px;
+	color: rgba(#344045, 0.5);
+	font-size: 21px;
+	text-transform: uppercase;
+}
+
+.info-description {
+	@include futura-medium();
+	max-width: 600px;
+	margin: 0 0 40px 0;
+	color: #364147;
+	font-size: 24px;
+	letter-spacing: 1.44px;
+	line-height: 43px;
+}
+@include screen-max(1350) {
+	.info-section {
+		text-align: center;
+
+		.row {
+			.col {
+				@include screen-max(900) {
+					min-width: auto;
+				}
+				width: 760px;
+				margin: auto;
+
+				&:nth-child(1) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.info-description {
+		margin: 0 auto 40px;
+	}
+
+	.btn-light {
+		margin: 0 auto;
+	}
+}

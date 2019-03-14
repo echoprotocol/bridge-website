@@ -1,0 +1,56 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+input[type="text"],
+input[type="phone"],
+input[type="email"],
+textarea {
+	appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+button {
+	&:focus {
+		outline: none;
+	}
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+code {
+	@include source();
+}
