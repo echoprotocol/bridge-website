@@ -84,6 +84,26 @@ $source: "../fonts/SourceCodePro";
 }
 
 @font-face {
+	font-family: "FuturaNew";
+	font-style: normal;
+	font-weight: 800;
+	src: url("#{$futura}/FuturaNewHeavy/FuturaNewHeavy.eot");
+	src: url("#{$futura}/FuturaNewHeavy/FuturaNewHeavy.woff2") format("woff2"),
+	url("#{$futura}/FuturaNewHeavy/FuturaNewHeavy.woff") format("woff"),
+	url("#{$futura}/FuturaNewHeavy/FuturaNewHeavy.otf") format("opentype"),
+	url("#{$futura}/FuturaNewHeavy/FuturaNewHeavy.ttf") format("truetype"),
+	url("#{$futura}/FuturaNewHeavy/FuturaNewHeavy.svg#FuturaNewHeavy")
+	format("svg");
+}
+
+@mixin futura-heavy {
+	font: {
+		family: "FuturaNew";
+		weight: 800;
+	}
+}
+
+@font-face {
 	font-family: "SourceCodePro";
 	font-style: normal;
 	font-weight: 400;

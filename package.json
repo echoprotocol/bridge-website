@@ -19,6 +19,7 @@
 		"stylelint": "stylelint '**/*.scss'; --config src/assets/.stylelintrc.json"
 	},
 	"dependencies": {
+		"classnames": "^2.2.6",
 		"config": "^1.30.0",
 		"connected-react-router": "^6.1.0",
 		"core-js": "^2.5.7",
