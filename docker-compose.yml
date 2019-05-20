@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  frontend:
+    image: 649.bridge.landing
+    container_name: '649.bridge.landing'
+    ports:
+      - 26490:80
+    restart: always

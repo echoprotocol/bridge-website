@@ -14,39 +14,41 @@ eslint:
     - npm run lint
   tags:
     - docker
+  only:
+      - merge_requests
+      - develop
+      - master
 
 build.develop:
   stage: build
-  cache:
-    key: $CI_COMMIT_REF_NAME
-    paths:
-      - node_modules
+  variables:
+    NODE_ENV: production
+    NODE_APP_INSTANCE: develop
   script:
-    - npm i
-    - npm run build-dev
-    - rm -rf /home/frontend
-    - cp -r ./dist /home/frontend
+    - docker build --build-arg NODE_APP_INSTANCE=${NODE_APP_INSTANCE} -t 649.bridge.landing . --no-cache
+    - docker-compose down
+    - docker-compose up -d
   only:
     - develop
   tags:
-    - develop
+    - pp-develop
   environment:
-    name: development
+    name: develop
+    url: https://649-bridge-landing.pixelplex-test.by
 
 build.master:
   stage: build
-  cache:
-    key: $CI_COMMIT_REF_NAME
-    paths:
-      - node_modules
+  variables:
+    NODE_ENV: production
+    NODE_APP_INSTANCE: master
   script:
-    - npm i
-    - npm run build-stage
-    - rm -rf /home/frontend
-    - cp -r ./dist /home/frontend
+    - docker build --build-arg NODE_APP_INSTANCE=${NODE_APP_INSTANCE} -t 649.bridge.landing . --no-cache
+    - docker-compose down
+    - docker-compose up -d
   only:
     - master
   tags:
-    - stage
+    - pp-stage
   environment:
-    name: stage
+    name: master
+    url: http://649-bridge-landing.pixelplexlabs.com
