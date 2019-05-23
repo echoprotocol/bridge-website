@@ -1,7 +1,7 @@
 {
 	"name": "pixelplex-app",
 	"description": "PixelPlex React Redux app",
-	"version": "0.3.0",
+	"version": "0.1.0",
 	"repository": {
 		"type": "git",
 		"url": "git@gitlab.pixelplex.by:full-stack/frontend.git"
