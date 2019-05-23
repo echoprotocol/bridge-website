@@ -1,0 +1,22 @@
+.toast  {
+	@include futura-medium();
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	height: 77px;
+	font-size: 16px;
+
+	&.error {
+		background-image: url(../images/widget/error-toast-bg.png);
+		background-repeat: repeat-x;
+		color: #bb3e51;
+	}
+
+	&-content {
+		padding-top: 20px;
+	}
+}

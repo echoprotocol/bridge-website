@@ -1,6 +1,6 @@
 import React from 'react';
 import Qr from '../Qr';
-import widget from '../../assets/images/temp/widget.png';
+import widget from '../../assets/images/temp/widget.svg';
 
 class HowTo extends React.Component {
 
