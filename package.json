@@ -1,13 +1,13 @@
 {
-	"name": "pixelplex-app",
-	"description": "PixelPlex React Redux app",
+	"name": "bridge-landing",
+	"description": "Echo Bridge Landing",
 	"version": "0.1.0",
 	"repository": {
 		"type": "git",
-		"url": "git@gitlab.pixelplex.by:full-stack/frontend.git"
+		"url": "https://github.com/echoprotocol/bridge-website.git"
 	},
-	"homepage": "https://gitlab.pixelplex.by/full-stack/frontend",
-	"license": "UNLICENSED",
+	"homepage": "https://github.com/echoprotocol/bridge-website",
+	"license": "MIT",
 	"private": true,
 	"scripts": {
 		"start": "cross-env NODE_ENV=local webpack-dev-server --mode development --progress --colors --history-api-fallback --hot --inline",
@@ -16,7 +16,8 @@
 		"build-stage": "cross-env NODE_ENV=stage webpack --progress --display-error-details --colors --mode production",
 		"lint": "$(npm bin)/eslint 'src/**/*.jsx' 'src/**/*.js'",
 		"lint-win": "cross-env eslint 'src/**/*.jsx' 'src/**/*.js' --fix",
-		"stylelint": "stylelint '**/*.scss'; --config src/assets/.stylelintrc.json"
+		"stylelint": "stylelint '**/*.scss'; --config src/assets/.stylelintrc.json",
+		"test": "npm run lint"
 	},
 	"dependencies": {
 		"babel-polyfill": "^6.26.0",
@@ -66,7 +67,7 @@
 		"clean-webpack-plugin": "^0.1.18",
 		"copyfiles": "^2.1.0",
 		"cross-env": "^5.1.4",
-		"css-loader": "^0.28.10",
+		"css-loader": "^3.1.0",
 		"eslint": "^4.18.2",
 		"eslint-config-airbnb": "^16.1.0",
 		"eslint-plugin-import": "^2.9.0",
