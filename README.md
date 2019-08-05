@@ -1,21 +1,34 @@
-# PixelPlex-app
+# Bridge Landing
 
-PixelPlex React Redux app
+![Travis (.com) branch](https://img.shields.io/travis/com/echoprotocol/bridge-website/master?label=build%20master)
+![Travis (.com) branch](https://img.shields.io/travis/com/echoprotocol/bridge-website/develop?label=build%20develop)
+
+Echo Bridge Landing.
 
 ## Getting started
 
 ### Installation
 
-1. `cd web-ui` to go into the project root
-1. `npm install` to install the website's npm dependencies
+```bash
+cd bridge-website # go into the project root
+npm i # install the website's npm dependencies
+```
 
 ### Running locally
 
-1. `npm start` to start the hot-reloading development server
-1. `http://localhost:8080` to open the site in your favorite browser
+```bash
+npm start # start the hot-reloading development server
+```
+
+`http://localhost:8080` to open the site in your favorite browser
 
 ### Build project
-1. `npm run build` Build and put the project in a folder /dist
+
+```bash
+npm run build
+``` 
+
+The command will compile a static site into the `dist` folder.
 
 ## Using STYLELINT
 
@@ -28,15 +41,36 @@ Install plugins:
 
 user settings.json
 
-    {
-    	"[scss]": {
-    		"editor.formatOnSave": true
-    	},
-    	"files.autoSave": "onFocusChange",
-    	"prettier.stylelintIntegration": true,
-    	"prettier.useTabs": true
-    }
-## Configure project for CI/CD
+```json
+{
+    "[scss]": {
+        "editor.formatOnSave": true
+    },
+    "files.autoSave": "onFocusChange",
+    "prettier.stylelintIntegration": true,
+    "prettier.useTabs": true
+}
+```
 
-1. Change the `$DOCKER_REPOSITORY_URL` var in the `.gitlab-ci.yml` file
-2. If is ECR used as docker repository, configure `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` vars in Settings->CI/CD->Variables
+## License
+
+The MIT License (MIT)
+
+Copyright (c) ECHO DEVELOPMENT LTD
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -1,54 +1,60 @@
 stages:
-  - test
   - build
+  - deploy
 
-eslint:
-  image: node:10.15
-  stage: test
-  cache:
-    key: $CI_COMMIT_REF_NAME
-    paths:
-    - node_modules/
+
+build:
+  stage: build
+  variables:
+    NODE_APP_INSTANCE: $CI_COMMIT_REF_NAME
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - npm i --silent
-    - npm run lint
-  tags:
-    - docker
+    - docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   only:
-      - merge_requests
-      - develop
-      - master
+    - master
+    - develop
+  tags:
+    - echo-linux
+
 
 build.develop:
   stage: build
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   variables:
+    CI_FULL_REGISTRY: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     NODE_ENV: production
     NODE_APP_INSTANCE: develop
+    PORT: 36491
   script:
-    - docker build --build-arg NODE_APP_INSTANCE=${NODE_APP_INSTANCE} -t 649.bridge.landing . --no-cache
-    - docker-compose down
-    - docker-compose up -d
+    - docker-compose -p bridge-develop up -d
   only:
     - develop
   tags:
-    - pp-develop
+    - bridge-dev
   environment:
     name: develop
     url: https://649-bridge-landing.pixelplex-test.by
 
+
 build.master:
   stage: build
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   variables:
+    CI_FULL_REGISTRY: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     NODE_ENV: production
     NODE_APP_INSTANCE: master
+    PORT: 26491
   script:
-    - docker build --build-arg NODE_APP_INSTANCE=${NODE_APP_INSTANCE} -t 649.bridge.landing . --no-cache
-    - docker-compose down
-    - docker-compose up -d
+    - docker-compose -p bridge-master up -d
   only:
     - master
   tags:
-    - pp-stage
+    - bridge-dev
   environment:
-    name: master
-    url: http://649-bridge-landing.pixelplexlabs.com
+    name: stage
+    url: https://649-bridge-landing.pixelplexlabs.com
