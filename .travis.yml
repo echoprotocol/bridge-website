@@ -4,6 +4,7 @@ node_js:
 
 stages:
   - lint
+  - test
 
 jobs:
   include:
@@ -13,3 +14,8 @@ jobs:
       if: type = push
       script:
         - npm run lint
+
+    - stage: test
+      name: "Tests"
+      if: branch IN (develop, master) AND type = pull_request
+      script: npm run test
