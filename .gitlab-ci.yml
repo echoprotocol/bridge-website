@@ -1,46 +1,69 @@
 stages:
   - build
+  - deploy
 
 
-build.develop:
+build:
   stage: build
-  before_script:
-    - CI_FULL_REGISTRY=bridge-landing:develop
   variables:
     CI_FULL_REGISTRY: ""
-    NODE_ENV: production
-    NODE_APP_INSTANCE: develop
-    PORT: 36491
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - CI_FULL_REGISTRY=$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
   script:
     - docker build --cache-from $CI_FULL_REGISTRY -t $CI_FULL_REGISTRY .
-    - docker-compose -p bridge-develop up -d
+    - docker push $CI_FULL_REGISTRY
   only:
+    - master
     - develop
     - ECHO-1113
   tags:
-    - bridge-dev
-  environment:
-    name: develop
-    url: https://649-bridge-landing.pixelplex-test.by
+    - gitlab-org
 
 
-build.master:
-  stage: build
-  before_script:
-    - CI_FULL_REGISTRY=bridge-landing:master
-  variables:
-    CI_FULL_REGISTRY: ""
-    NODE_ENV: production
-    NODE_APP_INSTANCE: master
-    PORT: 36491
-  script:
-    - docker build --cache-from $CI_FULL_REGISTRY -t $CI_FULL_REGISTRY .
-    - docker-compose -p bridge-develop up -d
-  only:
-    - master
-    - ECHO-1113
-  tags:
-    - bridge-dev
-  environment:
-    name: stage
-    url: http://649-bridge-landing.pixelplexlabs.com
+
+
+
+
+#build.develop:
+#  stage: build
+#  before_script:
+#    - CI_FULL_REGISTRY=bridge-landing:develop
+#  variables:
+#    CI_FULL_REGISTRY: ""
+#    NODE_ENV: production
+#    NODE_APP_INSTANCE: develop
+#    PORT: 36491
+#  script:
+#    -
+#    - docker-compose -p bridge-develop up -d
+#  only:
+#    - develop
+#    - ECHO-1113
+#  tags:
+#    - bridge-dev
+#  environment:
+#    name: develop
+#    url: https://649-bridge-landing.pixelplex-test.by
+#
+#
+#build.master:
+#  stage: build
+#  before_script:
+#    - CI_FULL_REGISTRY=bridge-landing:master
+#  variables:
+#    CI_FULL_REGISTRY: ""
+#    NODE_ENV: production
+#    NODE_APP_INSTANCE: master
+#    PORT: 36491
+#  script:
+#    - docker build --cache-from $CI_FULL_REGISTRY -t $CI_FULL_REGISTRY .
+#    - docker-compose -p bridge-develop up -d
+#  only:
+#    - master
+#    - ECHO-1113
+#  tags:
+#    - bridge-dev
+#  environment:
+#    name: stage
+#    url: http://649-bridge-landing.pixelplexlabs.com
