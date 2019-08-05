@@ -1,54 +1,46 @@
 stages:
-  - test
   - build
 
-eslint:
-  image: node:10.15
-  stage: test
-  cache:
-    key: $CI_COMMIT_REF_NAME
-    paths:
-    - node_modules/
-  script:
-    - npm i --silent
-    - npm run lint
-  tags:
-    - docker
-  only:
-      - merge_requests
-      - develop
-      - master
 
 build.develop:
   stage: build
+  before_script:
+    - CI_FULL_REGISTRY=bridge-landing:develop
   variables:
+    CI_FULL_REGISTRY: ""
     NODE_ENV: production
     NODE_APP_INSTANCE: develop
+    PORT: 36491
   script:
-    - docker build --build-arg NODE_APP_INSTANCE=${NODE_APP_INSTANCE} -t 649.bridge.landing . --no-cache
-    - docker-compose down
-    - docker-compose up -d
+    - docker build --cache-from $CI_FULL_REGISTRY -t $CI_FULL_REGISTRY .
+    - docker-compose -p bridge-develop up -d
   only:
     - develop
+    - ECHO-1113
   tags:
-    - pp-develop
+    - bridge-dev
   environment:
     name: develop
     url: https://649-bridge-landing.pixelplex-test.by
 
+
 build.master:
   stage: build
+  before_script:
+    - CI_FULL_REGISTRY=bridge-landing:master
   variables:
+    CI_FULL_REGISTRY: ""
     NODE_ENV: production
     NODE_APP_INSTANCE: master
+    PORT: 36491
   script:
-    - docker build --build-arg NODE_APP_INSTANCE=${NODE_APP_INSTANCE} -t 649.bridge.landing . --no-cache
-    - docker-compose down
-    - docker-compose up -d
+    - docker build --cache-from $CI_FULL_REGISTRY -t $CI_FULL_REGISTRY .
+    - docker-compose -p bridge-develop up -d
   only:
     - master
+    - ECHO-1113
   tags:
-    - pp-stage
+    - bridge-dev
   environment:
-    name: master
+    name: stage
     url: http://649-bridge-landing.pixelplexlabs.com

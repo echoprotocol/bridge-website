@@ -2,8 +2,7 @@ version: '3'
 
 services:
   frontend:
-    image: 649.bridge.landing
-    container_name: '649.bridge.landing'
+    image: $CI_FULL_REGISTRY
     ports:
-      - 26490:80
+      - 127.0.0.1:${PORT}:80
     restart: always
