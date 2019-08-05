@@ -16,37 +16,31 @@ build:
   only:
     - master
     - develop
-    - ECHO-1113
   tags:
     - echo-linux
 
 
+build.develop:
+  stage: build
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  variables:
+    CI_FULL_REGISTRY: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    NODE_ENV: production
+    NODE_APP_INSTANCE: develop
+    PORT: 36491
+  script:
+    - docker-compose -p bridge-develop up -d
+  only:
+    - develop
+    - ECHO-1113
+  tags:
+    - bridge-dev
+  environment:
+    name: develop
+    url: https://649-bridge-landing.pixelplex-test.by
 
 
-
-
-#build.develop:
-#  stage: build
-#  before_script:
-#    - CI_FULL_REGISTRY=bridge-landing:develop
-#  variables:
-#    CI_FULL_REGISTRY: ""
-#    NODE_ENV: production
-#    NODE_APP_INSTANCE: develop
-#    PORT: 36491
-#  script:
-#    -
-#    - docker-compose -p bridge-develop up -d
-#  only:
-#    - develop
-#    - ECHO-1113
-#  tags:
-#    - bridge-dev
-#  environment:
-#    name: develop
-#    url: https://649-bridge-landing.pixelplex-test.by
-#
-#
 #build.master:
 #  stage: build
 #  before_script:
