@@ -7,6 +7,14 @@
 		"url": "https://github.com/echoprotocol/bridge-website.git"
 	},
 	"homepage": "https://github.com/echoprotocol/bridge-website",
+	"author": {
+		"name": "PixelPlex, Inc.",
+		"email": "info@pixelplex.io",
+		"url": "https://pixelplex.io"
+	},
+	"bugs": {
+		"url": "https://github.com/echoprotocol/bridge-website/issues"
+	},
 	"license": "MIT",
 	"private": true,
 	"scripts": {
