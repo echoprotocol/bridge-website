@@ -72,7 +72,7 @@ class QRCodeWidget extends React.Component {
 
 				</div>
 
-				<div className="footer">© Copyright 2018</div>
+				<div className="footer">© Copyright 2019</div>
 			</div>
 		);
 	}
