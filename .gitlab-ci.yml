@@ -30,6 +30,7 @@ build.develop:
     NODE_APP_INSTANCE: develop
     PORT: 36491
   script:
+    - docker-compose pull
     - docker-compose -p bridge-develop up -d
   only:
     - develop
@@ -50,6 +51,7 @@ build.master:
     NODE_APP_INSTANCE: master
     PORT: 26491
   script:
+    - docker-compose pull
     - docker-compose -p bridge-master up -d
   only:
     - master
