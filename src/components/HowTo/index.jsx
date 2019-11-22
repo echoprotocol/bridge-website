@@ -15,8 +15,8 @@ class HowTo extends React.Component {
 						</div>
 
 						<div className="how-to-title">
-							{'Generate "request QR code"'}
-							<br />{'with Bridge'}
+							Generate &quot;request QR code&quot;
+							<br />with Bridge
 						</div>
 
 						<div className="how-to-row">
@@ -51,7 +51,7 @@ class HowTo extends React.Component {
 									</div>
 									<div className="fields-hints">
 										<div className="hint">
-                                            You can replace optional fields with {'"-"'}
+											You can replace optional fields with &quot;-&quot;
 										</div>
 									</div>
 								</div>
@@ -60,7 +60,7 @@ class HowTo extends React.Component {
 								<div className="code-example">
 									<div className="title">Example</div>
 									<div className="code">
-										{'https://echo-bridge.io/receive/testaccount/asset-14/-/qr-code.png'}
+										https://echo-bridge.io/receive/testaccount/asset-14/-/qr-code.png
 									</div>
 									<Qr />
 								</div>
@@ -68,8 +68,8 @@ class HowTo extends React.Component {
 						</div>
 
 						<div className="how-to-title">
-							{'GET Widget'}
-							<br />{'"request QR code"'}
+							GET Widget
+							<br />&quot;request QR code&quot;
 						</div>
 
 						<div className="how-to-row">
@@ -104,7 +104,7 @@ class HowTo extends React.Component {
 									</div>
 									<div className="fields-hints">
 										<div className="hint">
-                                            You can replace optional fields with {'"-"'}
+											You can replace optional fields with &quot;-&quot;
 										</div>
 									</div>
 								</div>
@@ -113,7 +113,7 @@ class HowTo extends React.Component {
 								<div className="code-example">
 									<div className="title">Example</div>
 									<div className="code">
-										{'https://echo-bridge.io/receive/testaccount/asset-14/-/widget'}
+										https://echo-bridge.io/receive/testaccount/asset-14/-/widget
 									</div>
 									<div className="widget">
 										<img src={widget} alt="widget" />
