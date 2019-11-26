@@ -15,7 +15,7 @@ jobs:
       uses: matootie/dokube@v1.2.0
       with:
         personalAccessToken: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-        clusterName: k8s-kluster
+        clusterName: bridge
         expirationTime: 300
 
     - name: Create deployment
