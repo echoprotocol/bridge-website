@@ -20,7 +20,7 @@ spec:
         app: website
     spec:
       containers:
-        - image:
+        - image: echoprotocol/bridge-website:latest
           imagePullPolicy: Always
           name: bridge-website
           ports:
