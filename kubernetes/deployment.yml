@@ -33,7 +33,7 @@ kind: Service
 metadata:
   name: website-lb
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 36491
     protocol: TCP
