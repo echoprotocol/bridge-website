@@ -19,4 +19,4 @@ jobs:
         expirationTime: 300
 
     - name: Create deployment
-      run: kubectl apply -f ./kubernetes/deployment.yml --record
+      run: kubectl apply -f ./kubernetes/deployment.yml

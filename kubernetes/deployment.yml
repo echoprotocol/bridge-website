@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bridge-website
+  name: website
 spec:
   spec:
   selector:
     matchLabels:
       app: website
-  replicas: 2
+  replicas: 1
   minReadySeconds: 15
   strategy:
     type: RollingUpdate
@@ -22,7 +22,7 @@ spec:
       containers:
         - image: echoprotocol/bridge-website:latest
           imagePullPolicy: Always
-          name: bridge-website
+          name: website
           ports:
             - containerPort: 80
 
@@ -31,12 +31,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: website-lb
+  name: website
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
-  - port: 36491
-    protocol: TCP
+  - port: 80
     targetPort: 80
   selector:
     app: website
