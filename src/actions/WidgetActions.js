@@ -39,11 +39,11 @@ class WidgetActions extends BaseActionsClass {
 	updateAmount(amount) {
 		amount = new BN(amount);
 
-		if (!amount.isInteger()) {
+		if (amount.isNaN()) {
 			return '0';
 		}
 
-		return amount.toString();
+		return amount.toString(10);
 	}
 
 	setCurrency(type, id, amount) {
@@ -56,7 +56,7 @@ class WidgetActions extends BaseActionsClass {
 				if (!asset) {
 					asset = {
 						symbol: 'ECHO',
-						precision: 5,
+						precision: 8,
 					};
 				}
 
