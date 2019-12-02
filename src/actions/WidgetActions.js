@@ -134,7 +134,7 @@ class WidgetActions extends BaseActionsClass {
 					to: receiver,
 					amount: {
 						asset_id: currency.get('id'),
-						amount: new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision')),
+						amount: new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision')).integerValue(),
 					},
 				};
 			}
@@ -149,7 +149,7 @@ class WidgetActions extends BaseActionsClass {
 						amount: 0,
 					},
 
-					code: getTransferCode(receiver, new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision'))),
+					code: getTransferCode(receiver, new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision')).integerValue()),
 					callee: currency.get('id'),
 				};
 			}
