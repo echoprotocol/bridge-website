@@ -39,11 +39,11 @@ class WidgetActions extends BaseActionsClass {
 	updateAmount(amount) {
 		amount = new BN(amount);
 
-		if (!amount.isInteger()) {
+		if (amount.isNaN()) {
 			return '0';
 		}
 
-		return amount.toString();
+		return amount.toString(10);
 	}
 
 	setCurrency(type, id, amount) {
@@ -56,7 +56,7 @@ class WidgetActions extends BaseActionsClass {
 				if (!asset) {
 					asset = {
 						symbol: 'ECHO',
-						precision: 5,
+						precision: 8,
 					};
 				}
 
@@ -134,7 +134,7 @@ class WidgetActions extends BaseActionsClass {
 					to: receiver,
 					amount: {
 						asset_id: currency.get('id'),
-						amount: new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision')),
+						amount: new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision')).integerValue(),
 					},
 				};
 			}
@@ -149,7 +149,7 @@ class WidgetActions extends BaseActionsClass {
 						amount: 0,
 					},
 
-					code: getTransferCode(receiver, new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision'))),
+					code: getTransferCode(receiver, new BN(parseFloat(currency.get('amount'))).times(10 ** currency.get('precision')).integerValue()),
 					callee: currency.get('id'),
 				};
 			}
