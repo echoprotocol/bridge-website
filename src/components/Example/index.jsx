@@ -13,7 +13,10 @@ class Example extends React.Component {
 			<section className="example-section">
 				<div className="container">
 					<div className="row">
-						<div className="col flex-center ">
+						<div className="col ">
+							<div className="example-info">
+								You can allow making transactions and calling smart contracts on your web application. Users will be able to sign transactions using Bridge
+							</div>
 							<div className="github-wrap">
 								<div className="github">
 									<img src={git} alt="" className="logo" />

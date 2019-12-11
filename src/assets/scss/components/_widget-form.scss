@@ -1,0 +1,77 @@
+.widget-form {
+	padding: 35px 63px 35px 66px;
+	margin: 0 auto;
+	width: 70%;
+	background-color: #DFE4E8;
+}
+
+.widget-form-title {
+	margin-bottom: 9px;
+	@include futura-heavy();
+	font-size: 28px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.widget-field-wrap {
+	display: inline-block;
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+
+	&.error {
+		.field {
+			background: #fff2f2;
+			border: 1px solid #df6c7f;
+		}
+	}
+
+	&.full {
+		width: 100%;
+	}
+
+	.label {
+		font-size: 16px;
+		line-height: 32px;
+		@include futura-medium();
+		display: block;
+	}
+
+	.field {
+		padding: 12px 25px;
+		width: 100%;
+		@include futura-medium();
+		font-size: 22px;
+		line-height: 30px;
+		background: #fff;
+		border-radius: 5px;
+		outline: none;
+		border: none;
+		border: 1px solid transparent;
+		transition: background .3s ease-in, border .3s ease-in;
+
+		&:focus {
+			border: 1px solid #a2adb3;
+		}
+
+		@include placeholder() {
+			color: #344148;
+			@include futura-medium();
+			font-size: 22px;
+			line-height: 32px;
+			opacity: .5;
+		}
+	}
+
+	.error-block {
+		position: absolute;
+		right: 0;
+		bottom: -20px;
+		color: #df6c7f;
+		@include futura-medium();
+		font-size: 16px;
+	}
+}

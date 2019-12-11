@@ -3,6 +3,7 @@
 		height: auto;
 		padding: 80px 0;
 	}
+
 	@include screen-max(680) {
 		.btn-wrap-2 {
 			justify-content: center;
@@ -16,6 +17,7 @@
 			}
 		}
 	}
+
 	height: 1000px;
 	padding: 204px 0;
 	background-color: #e0e4e8;
@@ -40,14 +42,17 @@
 			@include screen-max(1480) {
 				min-width: 620px;
 			}
+
 			@include screen-max(1350) {
 				min-width: 760px;
 				max-width: 760px;
 				margin: auto;
 			}
+
 			@include screen-max(900) {
 				min-width: auto;
 			}
+
 			min-width: 760px;
 		}
 
@@ -57,6 +62,7 @@
 				justify-content: center;
 				display: flex;
 			}
+
 			@include screen-max(1350) {
 				display: none;
 			}
@@ -69,6 +75,7 @@
 			top: -48px;
 			right: -161px;
 		}
+
 		@include screen-max(1755) {
 			width: auto;
 			padding: 0 0 0 80px;
@@ -86,10 +93,12 @@
 
 .tagline {
 	@include futura-demi();
+
 	@include screen-max(900) {
 		line-height: 32px;
 	}
-	padding: 22px 0;
+
+	padding: 22px 0 22px 5px;
 	color: rgba(#344045, 0.5);
 	font-size: 21px;
 	letter-spacing: 5.2px; // 4.83px;
@@ -100,9 +109,11 @@
 	@include screen-max(1480) {
 		max-width: 620px;
 	}
+
 	@include screen-max(1350) {
 		max-width: 760px;
 	}
+
 	width: 100%;
 	max-width: 760px;
 	padding: 20px 0 48px;

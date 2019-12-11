@@ -22,6 +22,24 @@
 	transform: translateZ(0);
 }
 
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+
+	&:-moz-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
 @mixin onBtnFocus($angular, $outerBorderWidth, $innerBorderWidth, $color) {
 	@include hardwareAccel();
 	position: relative;

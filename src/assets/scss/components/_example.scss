@@ -1,17 +1,30 @@
 .example-section {
-	padding: 60px 0 80px;
+	padding: 90px 0 105px;
 	background-color: #384549;
+
+	.col:first-child {
+		padding: 30px 97px 30px 0;
+	}
 }
 
 .example-code-scroll {
 	position: relative;
-	height: 420px;
+	height: 317px;
+}
+
+.example-info {
+	margin-bottom: 32px;
+	@include futura-demi();
+	font-size: 32px;
+	line-height: 46px;
+	letter-spacing: .6px;
+	color: #FFFFFF;
 }
 
 .github-wrap {
-	flex-direction: column;
+	width: 100%;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	display: flex;
 }
 
@@ -19,12 +32,12 @@
 	@include futura-demi();
 	align-items: center;
 	display: flex;
-	margin: 0 0 40px;
 	color: #fff;
-	font-size: 28px;
+	font-size: 22px;
+	letter-spacing: 1.15px;
 
 	img {
-		margin-right: 26px;
+		margin-right: 17px;
 	}
 }
 
