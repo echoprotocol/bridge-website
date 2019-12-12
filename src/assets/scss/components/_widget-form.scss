@@ -1,5 +1,5 @@
 .widget-form {
-	padding: 35px 63px 35px 66px;
+	padding: 35px 63px 93px 66px;
 	margin: 0 auto;
 	width: 70%;
 	background-color: #DFE4E8;
@@ -18,7 +18,7 @@
 	display: inline-block;
 	position: relative;
 
-	&:not(:last-child) {
+	&:first-of-type {
 		margin-bottom: 10px;
 	}
 
@@ -29,8 +29,17 @@
 		}
 	}
 
-	&.full {
+	&.lg {
 		width: 100%;
+	}
+
+	&.md {
+		width: 67%;
+
+		input {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
 	}
 
 	.label {
@@ -73,5 +82,11 @@
 		color: #df6c7f;
 		@include futura-medium();
 		font-size: 16px;
+	}
+}
+
+.widget-button {
+	.btn-primary {
+		width: 100%;
 	}
 }

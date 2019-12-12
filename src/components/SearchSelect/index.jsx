@@ -1,61 +1,63 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
-import React, { useRef } from 'react';
+import React, { createRef, useRef } from 'react';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
-import Select, { components } from 'react-select';
+import Select from 'react-select';
 
 const assetsOptions = [
 	{
-		label: '1',
+		label: 'BTS',
+		id: '1.3.8',
 	},
-	{ label: '1' },
-	{ label: '3' },
-	{ label: '4' },
-	{ label: '5' },
-	{ label: '6' },
-	{ label: '7' },
-	{ label: '8' },
-	{ label: '9' },
-	{ label: '10' },
-	{ label: '11' },
-	{ label: '12' },
-	{ label: 'Aruba' },
-	{ label: 'Australia' },
-	{ label: 'Austria' },
-	{ label: 'Azerbaijan' },
-	{ label: 'Bahamas' },
-	{ label: 'Bahrain' },
+	{
+		label: 'BST',
+		id: '1.3.5',
+	},
+	{
+		label: 'BUS',
+		id: '1.4.8',
+	},
+	{
+		label: 'BUZ',
+		id: '1.2.4',
+	},
+	{
+		label: 'FIZ',
+		id: '5.2.1',
+	},
 ].map((option) => ({
 	value: option.label,
 	label: option.label,
+	id: option.id,
 }));
 
 const tokenOptions = [
 	{
-		label: '1',
+		label: 'BTC',
+		id: '1.3.8',
 	},
-	{ label: '1' },
-	{ label: '3' },
-	{ label: '4' },
-	{ label: '5' },
-	{ label: '6' },
-	{ label: '7' },
-	{ label: '8' },
-	{ label: '9' },
-	{ label: '10' },
-	{ label: '11' },
-	{ label: '12' },
-	{ label: 'Aruba' },
-	{ label: 'Australia' },
-	{ label: 'Austria' },
-	{ label: 'Azerbaijan' },
-	{ label: 'Bahamas' },
-	{ label: 'Bahrain' },
+	{
+		label: 'PST',
+		id: '1.3.5',
+	},
+	{
+		label: 'BLS',
+		id: '1.4.8',
+	},
+	{
+		label: 'BUZ',
+		id: '1.2.4',
+	},
+	{
+		label: 'FIZ',
+		id: '5.2.1',
+	},
 ].map((option) => ({
 	value: option.label,
 	label: option.label,
+	id: option.id,
 }));
 
 const options = [
@@ -69,13 +71,9 @@ const options = [
 	},
 ];
 
-// const ControlComponent = (props) => (
-// 	<components.Control {...props} className="select-control" />
-// );
-
 function MenuList(props) {
 	return (
-		<PerfectScrollbar>
+		<PerfectScrollbar className="select-scroll">
 			<div className="select-menu">
 				{props.children}
 			</div>
@@ -83,17 +81,23 @@ function MenuList(props) {
 	);
 }
 
-// const GroupHeading = (props) => (
-// 	<components.GroupHeading {...props} className="select-group-header" />
-// );
 const scrollByKeyboard = (optionRef, props) => {
-	const controlPanel = optionRef && optionRef.current && optionRef.current.closest('.search-select');
-	const optionParent = optionRef && optionRef.current && optionRef.current.offsetParent;
-	const optionOffset = optionRef && optionRef.current && optionRef.current.offsetTop;
-	optionParent && controlPanel.addEventListener('keyup', () => {
-		if (props.isFocused) {
-			optionParent.scrollTop = optionOffset;
-		}
+
+	if (!optionRef || !optionRef.current) {
+		return;
+	}
+
+	const optionParent = optionRef.current.offsetParent;
+
+	if (!optionParent || !props.isFocused) {
+		return;
+	}
+
+	const controlPanel = optionRef.current.closest('.search-select');
+	const optionOffset = optionRef.current.offsetTop;
+
+	controlPanel.addEventListener('keyup', () => {
+		optionParent.scrollTop = optionOffset;
 	});
 };
 
@@ -102,42 +106,62 @@ const CustomOption = ({
 }) => {
 	const optionRef = useRef();
 	scrollByKeyboard(optionRef, props);
-	// const controlPanel = optionRef && optionRef.current && optionRef.current.closest('.search-select');
-	// const optionParent = optionRef && optionRef.current && optionRef.current.offsetParent;
-	// // const optionParentHeight = optionRef && optionRef.current && optionRef.current.closest('.select-menu').clientHeight;
-	// const optionOffset = optionRef && optionRef.current && optionRef.current.offsetTop;
-	// optionParent && controlPanel.addEventListener('keyup', () => {
-	// 	if (props.isFocused) {
-	// 		optionParent.scrollTop = optionOffset;
-	// 	}
-	// });
-
 	return (
-		<div ref={optionRef} {...innerProps} className={classnames('select-field')}>
-			<span>{data.label}</span>
-			<span>{data.sub}</span>
+		<div ref={optionRef} {...innerProps} className={classnames('select-field', { focus: props.isFocused }, { selected: props.isSelected })}>
+			<span className="select-field-label">{data.label}</span>
+			<span className="select-field-id">{data.id}</span>
 		</div>
 	);
 };
 
+const SingleValue = ({ selectProps, data }) => (
+	<div className="selected-value">
+		<span className="selected-value-label">{selectProps.getOptionLabel(data)}</span>
+		<span className="selected-value-id">{data.id}</span>
+	</div>
+);
+
+
 class IntegrationReactSelect extends React.Component {
 
+	state={
+		isSearchEmpty: false,
+	}
+
+	onKeyDown = (selectRef) => {
+		const select = selectRef.current.select.controlRef.offsetParent;
+		setTimeout(() => {
+			const isSearchEmpty = select.querySelector('.search-select__menu-notice');
+			this.setState({
+				isSearchEmpty: !!isSearchEmpty,
+			});
+			isSearchEmpty ? select.classList.add('error') : select.classList.remove('error');
+		}, 0);
+	};
+
 	render() {
+		const selectRef = createRef();
+		const { className } = this.props;
 		return (
-			<div>
+			<div className={className}>
 				<Select
+					ref={selectRef}
+					onKeyDown={() => this.onKeyDown(selectRef)}
+					isClearable
 					classNamePrefix="search-select"
-					menuIsOpen
+					value="sads"
 					options={options}
 					components={{
 						MenuList,
+						SingleValue,
 						Option: CustomOption,
 						DropdownIndicator: null,
 					}}
-					placeholder="Select multiple countries"
-					isOptionDisabled={(option) => option.disabled}
+					placeholder="Select item"
 					className="search-select"
+					defaultValue={options[0].options[0]}
 				/>
+				<div className={classnames('error-message', { active: this.state.isSearchEmpty })}>Invalid currency</div>
 			</div>
 		);
 	}
