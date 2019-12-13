@@ -1,0 +1,136 @@
+.request-qr {
+	padding: 115px 0 105px;
+	background-color: #F5F7F8;
+}
+
+.request-qr-title {
+	margin-bottom: 65px;
+}
+
+.request-qr-field {
+	margin-bottom: 89px;
+
+	.title {
+		margin-bottom: 34px;
+	}
+
+	.field-label {
+		margin-bottom: 4px;
+		@include futura-demi();
+		font-size: 16px;
+		line-height: 24px;
+		color: #324046;
+		opacity: .5;
+		letter-spacing: 1.5px;
+	}
+
+	.field {
+		position: relative;
+		padding: 11px 38px 11px 14px;
+		background-color: #fff;
+		@include source();
+		font-size: 16px;
+		line-height: 32px;
+		border-radius: 5px;
+	}
+
+	.field-item {
+		position: relative;
+
+		&.account {
+			color: #5D51A9;
+		}
+
+		&.currency {
+			color: #13BD95;
+		}
+
+		&.id {
+			color: #C923AC;
+		}
+
+		&.amount {
+			color: #B08E17;
+		}
+	}
+
+	.field-item-mark {
+		@include futura-heavy();
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		top: calc(100% + 36px);
+		left: 1px;
+		color: #344148;
+		font-size: 18px;
+		opacity: .5;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: calc(100% + 4px);
+			left: 0;
+			width: 100%;
+			height: 10px;
+			opacity: .2;
+			border: 1px solid #000000;
+			border-top: none;
+		}
+	}
+
+	.field-copy {
+		position: absolute;
+		top: calc(50% + 3px);
+		right: 12px;
+		transform: translateY(-50%);
+	}
+}
+
+.request-qr-description {
+	.title {
+		margin-bottom: 18px;
+	}
+}
+
+.description-item {
+	display: flex;
+
+	&:not(:last-child) {
+		margin-bottom: 35px;
+	}
+
+	.description-item-parameter {
+		width: 35.7%;
+		padding-right: 15px;
+		display: flex;
+		align-items: flex-start;
+
+		>span:first-child {
+			min-width: 40px;
+			@include futura-medium();
+			font-size: 18px;
+			line-height: 26px;
+			display: inline-block;
+		}
+
+		>span:nth-child(2) {
+			@include source();
+			font-size: 14px;
+			line-height: 26px;
+		}
+	}
+
+	.description-item-info {
+		@include futura-medium();
+		font-size: 18px;
+		line-height: 26px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		letter-spacing: .3px;
+
+		.thin {
+			font-weight: 300;
+		}
+	}
+}

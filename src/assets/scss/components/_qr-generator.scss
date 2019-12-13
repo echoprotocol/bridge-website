@@ -1,0 +1,88 @@
+.qr-generator {
+	padding: 40px 25px 101px 50px;
+	background-color: #DFE4E8;
+}
+
+.qr-generator-wrap {
+	margin-bottom: 64px;
+}
+
+.qr-generator-form {
+	margin-bottom: 38px;
+
+	&>.title {
+		margin-bottom: 21px;
+		@include futura-heavy();
+		font-size: 32px;
+		line-height: 42px;
+		letter-spacing: 1.2px;
+	}
+
+	&>.fields {
+		margin-bottom: 2px;
+		@include source();
+		font-size: 15px;
+		line-height: 32px;
+	}
+
+	.dynamic-field {
+		padding: 0 5px;
+		@include source();
+		font-size: 16px;
+		line-height: 32px;
+		height: 32px;
+		margin: 0 5px;
+		border-radius: 5px;
+		outline: none;
+		border: 1px solid #fff;
+		transition: border .3s ease-in;
+
+
+		&:focus {
+			border: 1px solid #a2adb3;
+		}
+
+		&.account {
+			width: 10.8%;
+		}
+
+		&.id {
+			width: 22%;
+		}
+
+		&.amount {
+			width: 22%;
+		}
+	}
+
+	.dropdown-field {
+		margin: 0 5px;
+		display: inline-block;
+		width: 9.5%;
+	}
+
+	&>.info {
+		@include futura-medium();
+		font-size: 18px;
+		line-height: 32px;
+		color: #344148;
+		opacity: .5;
+		letter-spacing: .3px;
+	}
+}
+
+.qr-generator-result {
+	.title {
+		margin-bottom: 3px;
+		font-size: 24px;
+		line-height: 42px;
+		@include futura-medium();
+		letter-spacing: 1.5px;
+	}
+
+	.copy-field {
+		width: 82.15%;
+		background-color: #fff;
+		color: #4C8BF5;
+	}
+}

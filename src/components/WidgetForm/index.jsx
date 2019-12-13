@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import WidgetFormField from '../WidgetFormField';
 import SearchSelect from '../SearchSelect';
-import CopyField from '../CopyField';
+import CopyButton from '../CopyButton';
 
 export default class WidgetForm extends Component {
+
+	state = {
+		generatedWidget: '',
+	}
 
 	toggleError = () => {
 		this.setState({
@@ -31,7 +35,17 @@ export default class WidgetForm extends Component {
 					error={null}
 				/>
 				<SearchSelect className="search-select-wrap" />
-				<CopyField value="https://echo-bridge.io/receive/testaccount_12345/asset-0/10000000/widget" color="#ffffff" background="#35454a" />
+				{
+					this.state.generatedWidget &&
+					<div className="widget-form-widget">
+						<div className="copy-field">
+							<span className="copy-field-value">
+								{this.state.generatedWidget}
+							</span>
+							<CopyButton value={this.state.generatedWidget} iconColor="#ABB2B4" />
+						</div>
+					</div>
+				}
 				<div className="widget-button">
 					<button className="btn-primary">
 						<span className="text">Generate Widget</span>

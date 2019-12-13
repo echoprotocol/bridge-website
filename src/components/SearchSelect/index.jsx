@@ -149,7 +149,6 @@ class IntegrationReactSelect extends React.Component {
 					onKeyDown={() => this.onKeyDown(selectRef)}
 					isClearable
 					classNamePrefix="search-select"
-					value="sads"
 					options={options}
 					components={{
 						MenuList,

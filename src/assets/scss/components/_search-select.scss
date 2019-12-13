@@ -51,23 +51,24 @@
 	}
 
 	.search-select__control {
-		padding: 12px 25px;
+		padding: 12px 12px;
 		min-height: 0;
-		border-bottom-right-radius: 5px;
-		border-top-right-radius: 5px;
+		bottom-right-radius: 8px;
+		border-top-right-radius: 8px;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 		border: 1px solid transparent;
+		border-left: 1px solid #DFE4E8;
 		transition: background .3s ease-in, border .3s ease-in;
 
 		&:hover:not(.search-select__control--is-focused):not(.search-select__control--menu-is-open) {
 			border-color: transparent;
+			border-left: 1px solid #DFE4E8;
 		}
 
 		&--is-focused {
 			border-color: #a2adb3;
 			box-shadow: none;
-			border-bottom-right-radius: 0;
 
 			&:hover {
 				border-color: #a2adb3;
@@ -76,6 +77,7 @@
 
 		&--menu-is-open {
 			border-color: #a2adb3;
+			border-bottom-right-radius: 0;
 
 			&:hover {
 				border-color: #a2adb3;

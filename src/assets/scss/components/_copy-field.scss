@@ -1,16 +1,18 @@
 .copy-field {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 	position: relative;
-	padding: 7px 50px 7px 20px;
-	border-radius: 5px;
+	padding: 12px 20px;
+	border-radius: 8px;
 }
 
 .copy-field-icon {
-	position: absolute;
-	right: 20px;
-	bottom: 15px;
+	top: -3px;
+	position: relative;
 	display: block;
-	width: 24px;
-	height: 24px;
+	font-size: 24px;
+	opacity: .7;
 
 	&:hover {
 		cursor: pointer;
@@ -23,9 +25,10 @@
 }
 
 .copy-field-value {
+	font-size: 18px;
 	@include source();
-	font-size: 15px;
-	line-height: 22px;
+	line-height: 32px;
+	letter-spacing: .85px;
 }
 
 .copy-field-message {
@@ -34,28 +37,21 @@
 	bottom: 100%;
 	@include futura-medium();
 	font-size: 14px;
+	line-height: 16px;
 	opacity: 0;
-	transform: scale(.5) translateX(-50%);
+	transform: translateX(-50%);
 	transform-origin: center;
 	transition: opacity 300ms ease-in, transform 300ms ease-in;
 
-	&.appear {
-		transform: scale(.5) translateX(-50%);
-		opacity: 0;
-	}
-
 	&.transition-enter-active {
-		transform: scale(1) translateX(-50%);
 		opacity: .7
 	}
 
 	&.transition-enter-done {
-		transform: scale(1) translateX(-50%);
 		opacity: .7;
 	}
 
 	&.transition-exit-active {
-		transform: scale(0) translateX(-50%);
 		opacity: 0;
 	}
 

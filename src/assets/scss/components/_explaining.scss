@@ -1,0 +1,20 @@
+.explaining {
+	padding: 115px 0 132px;
+
+	.title {
+		margin-bottom: 55px;
+		width: 685px;
+	}
+
+	.text {
+		max-width: 1153px;
+		@include futura-medium();
+		font-size: 22px;
+		line-height: 36px;
+		letter-spacing: .5px;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}

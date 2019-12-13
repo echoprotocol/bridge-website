@@ -34,7 +34,7 @@
 	}
 
 	&.md {
-		width: 67%;
+		width: 66.66%;
 
 		input {
 			border-top-right-radius: 0;
@@ -50,13 +50,13 @@
 	}
 
 	.field {
-		padding: 12px 25px;
+		padding: 12px 20px;
 		width: 100%;
 		@include futura-medium();
 		font-size: 22px;
 		line-height: 30px;
 		background: #fff;
-		border-radius: 5px;
+		border-radius: 8px;
 		outline: none;
 		border: none;
 		border: 1px solid transparent;
@@ -82,6 +82,16 @@
 		color: #df6c7f;
 		@include futura-medium();
 		font-size: 16px;
+	}
+}
+
+.widget-form-widget {
+	font-size: 15px;
+	margin-bottom: 25px;
+
+	.copy-field {
+		background-color: #566469;
+		color: #fff;
 	}
 }
 
