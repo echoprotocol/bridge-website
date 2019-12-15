@@ -34,7 +34,7 @@ export default class WidgetForm extends Component {
 					className="md"
 					error={null}
 				/>
-				<SearchSelect className="search-select-wrap" />
+				<SearchSelect classNameWrap="search-select-wrap" />
 				{
 					this.state.generatedWidget &&
 					<div className="widget-form-widget">

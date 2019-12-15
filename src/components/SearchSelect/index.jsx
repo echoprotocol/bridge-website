@@ -132,21 +132,61 @@ class IntegrationReactSelect extends React.Component {
 		const select = selectRef.current.select.controlRef.offsetParent;
 		setTimeout(() => {
 			const isSearchEmpty = select.querySelector('.search-select__menu-notice');
+
+			const selectValue = select.querySelector('.search-select__input input').value.toLowerCase();
+			const selectFields = [...select.querySelectorAll('.select-field-label')];
+			selectFields.forEach((field) => {
+				const fieldValue = field.innerText.toLowerCase();
+				const index = fieldValue.indexOf(selectValue);
+				if (index !== -1 ) {
+					const firstValue = fieldValue.split('').slice(0, index).join('').toUpperCase();
+					const higlightValue=fieldValue.split('').slice(index, index + selectValue.length).join('').toUpperCase();
+					const secondValue = fieldValue.split('').slice(index + selectValue.length).join('').toUpperCase();
+					const firstEl=document.createElement('span');
+					firstEl.innerText = firstValue;
+					const highlightEl=document.createElement('span');
+					highlightEl.classList.add('hightlight');
+					highlightEl.innerText = higlightValue;
+					const secondEl = document.createElement('span');
+					secondEl.innerText = secondValue;
+					while (field.firstChild) {
+						field.removeChild(field.firstChild);
+					}
+					field.append(firstValue, highlightEl, secondEl)
+				}
+			})
 			this.setState({
 				isSearchEmpty: !!isSearchEmpty,
 			});
-			isSearchEmpty ? select.classList.add('error') : select.classList.remove('error');
+			if (isSearchEmpty) {
+				select.classList.add('error')
+			}
+			else {
+				select.classList.remove('error');
+			}
 		}, 0);
 	};
 
+	onBlur = (selectRef) => {
+		const select = selectRef.current.select.controlRef.offsetParent;
+		const isError = select.classList.contains('error');
+		if (isError) {
+			select.classList.remove('error');
+			this.setState({
+				isSearchEmpty: false,
+			});
+		}
+	}
+
 	render() {
 		const selectRef = createRef();
-		const { className } = this.props;
+		const { classNameWrap } = this.props;
 		return (
-			<div className={className}>
+			<div className={classNameWrap}>
 				<Select
 					ref={selectRef}
 					onKeyDown={() => this.onKeyDown(selectRef)}
+					onBlur={() => this.onBlur(selectRef)}
 					isClearable
 					classNamePrefix="search-select"
 					options={options}
