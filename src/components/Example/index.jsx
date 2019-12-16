@@ -23,7 +23,7 @@ class Example extends React.Component {
 									<span>We are on Github</span>
 								</div>
 								<button className="btn-primary">
-									<span className="text">Get started</span>
+									<span className="text">Get Started</span>
 								</button>
 							</div>
 						</div>

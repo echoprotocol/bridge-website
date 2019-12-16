@@ -17,18 +17,30 @@ section {
 
 		&:nth-child(2) {
 			min-width: 760px;
+
+			@include screen-max(1280) {
+				min-width: auto;
+			}
 		}
 	}
 }
 
-@include screen-max(1480) {
+@include screen-max(1400) {
 	.container {
-		max-width: 1200px;
+		max-width: 1250px;
 	}
 }
 
-@include screen-max(900) {
+@include screen-max(1280) {
 	.container {
-		padding: 0 25px;
+		padding: 0 76px;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+@include screen-max(1000) {
+	.container {
+		padding: 0 56px;
 	}
 }

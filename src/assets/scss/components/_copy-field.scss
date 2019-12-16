@@ -29,6 +29,11 @@
 	@include source();
 	line-height: 32px;
 	letter-spacing: .85px;
+
+	@include screen-max(1400) {
+		font-size: 15px;
+		letter-spacing: .7px;
+	}
 }
 
 .copy-field-message {

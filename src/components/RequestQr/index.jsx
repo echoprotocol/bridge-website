@@ -54,7 +54,7 @@ const RequestQr = () => (
 					<ul className="description-item-info">
 						<li>The name of the account the funds will be transferred to.</li>
 						<li>
-							<span className="thin">Example:</span> testaccount.
+							<span className="italic">Example:</span> testaccount.
 						</li>
 						<li>Required field.</li>
 					</ul>
@@ -77,7 +77,7 @@ const RequestQr = () => (
 					<ul className="description-item-info">
 						<li>Asset or token ID is specified without prefix.</li>
 						<li>
-							<span className="thin">Example:</span> asset-0 for ECHO asset.
+							<span className="italic">Example:</span> asset-0 for ECHO asset.
 						</li>
 						<li>Optional field.</li>
 					</ul>
@@ -90,7 +90,7 @@ const RequestQr = () => (
 					<ul className="description-item-info">
 						<li>The amount of funds to be transferred. Amount is specified without delimiters.</li>
 						<li>
-							<span className="thin">Example:</span> 1000.
+							<span className="italic">Example:</span> 1000.
 						</li>
 						<li>Optional field.</li>
 					</ul>

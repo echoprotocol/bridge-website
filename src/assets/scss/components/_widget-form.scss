@@ -1,17 +1,32 @@
 .widget-form {
-	padding: 35px 63px 93px 66px;
+	padding: 38px 63px 93px 66px;
 	margin: 0 auto;
 	width: 70%;
 	background-color: #DFE4E8;
+
+	@include screen-max(1400) {
+		width: 94%;
+		padding: 33px 63px 93px 66px;
+	}
+
+	@include screen-max(1000) {
+		padding: 62px 13% 93px 13%;
+		width: 92%;
+	}
 }
 
 .widget-form-title {
-	margin-bottom: 9px;
+	margin-bottom: 8px;
 	@include futura-heavy();
 	font-size: 28px;
 	letter-spacing: 1px;
 	line-height: 40px;
 	text-align: center;
+
+	@include screen-max(1000) {
+		font-size: 24px;
+		line-height: 36px;
+	}
 }
 
 .widget-field-wrap {
@@ -20,6 +35,10 @@
 
 	&:first-of-type {
 		margin-bottom: 10px;
+
+		@include screen-max(1000) {
+			margin-bottom: 15px;
+		}
 	}
 
 	&.error {
@@ -44,7 +63,7 @@
 
 	.label {
 		font-size: 16px;
-		line-height: 32px;
+		line-height: 31px;
 		@include futura-medium();
 		display: block;
 	}
@@ -62,6 +81,11 @@
 		border: 1px solid transparent;
 		transition: background .3s ease-in, border .3s ease-in;
 
+		@include screen-max(1000) {
+			font-size: 18px;
+			padding: 5px 20px;
+		}
+
 		&:focus {
 			border: 1px solid #a2adb3;
 		}
@@ -72,6 +96,10 @@
 			font-size: 22px;
 			line-height: 32px;
 			opacity: .5;
+
+			@include screen-max(1000) {
+				font-size: 18px;
+			}
 		}
 	}
 

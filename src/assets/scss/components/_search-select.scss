@@ -4,6 +4,10 @@
 	width: 33%;
 	position: relative;
 
+	@include screen-max(1400) {
+		margin-bottom: 45px;
+	}
+
 	.error-message {
 		display: none;
 		@include futura-medium();
@@ -60,6 +64,10 @@
 		border: 1px solid transparent;
 		border-left: 1px solid #DFE4E8;
 		transition: background .3s ease-in, border .3s ease-in;
+
+		@include screen-max(1000) {
+			padding: 5px 12px;
+		}
 
 		&:hover:not(.search-select__control--is-focused):not(.search-select__control--menu-is-open) {
 			border-color: transparent;
@@ -124,6 +132,10 @@
 		font-size: 22px;
 		line-height: 30px;
 
+		@include screen-max(1000) {
+			font-size: 18px;
+		}
+
 		>div {
 			margin: 0;
 			padding: 0;
@@ -138,6 +150,10 @@
 		font-size: 18px;
 		color: #344148;
 		opacity: .5;
+
+		@include screen-max(1000) {
+			font-size: 15px;
+		}
 	}
 
 	.search-select__input {
@@ -156,6 +172,10 @@
 		@include futura-medium();
 		font-size: 22px;
 		line-height: 30px;
+
+		@include screen-max(1000) {
+			font-size: 18px;
+		}
 
 		&:hover {
 			cursor: pointer;
@@ -176,7 +196,8 @@
 
 	.select-field-label {
 		color: #344148;
-		.hightlight{
+
+		.hightlight {
 			background-color: rgba(92, 210, 172, .7);
 		}
 	}
@@ -185,6 +206,10 @@
 		font-size: 18px;
 		color: #344148;
 		opacity: .5;
+
+		@include screen-max(1000) {
+			font-size: 15px;
+		}
 	}
 
 	.search-select__indicators {

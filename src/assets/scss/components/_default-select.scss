@@ -10,6 +10,8 @@
 		border: 1px solid #fff;
 		box-shadow: none;
 		transition: border .3s ease-in;
+		line-height: 30px;
+
 
 		&:hover:not(.default-select__control--is-focused):not(.default-select__control--menu-is-open) {
 			border-color: transparent;

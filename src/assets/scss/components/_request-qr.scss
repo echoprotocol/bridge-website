@@ -1,10 +1,26 @@
 .request-qr {
-	padding: 115px 0 105px;
+	padding: 116px 0 105px;
 	background-color: #F5F7F8;
+
+	@include screen-max(1400) {
+		padding: 99px 0 105px;
+	}
+
+	@include screen-max(1280) {
+		padding: 70px 0 80px;
+	}
 }
 
 .request-qr-title {
 	margin-bottom: 65px;
+
+	@include screen-max(1400) {
+		margin-bottom: 62px;
+	}
+
+	@include screen-max(1280) {
+		margin-bottom: 44px;
+	}
 }
 
 .request-qr-field {
@@ -12,6 +28,10 @@
 
 	.title {
 		margin-bottom: 34px;
+
+		@include screen-max(1400) {
+			margin-bottom: 40px;
+		}
 	}
 
 	.field-label {
@@ -32,6 +52,18 @@
 		font-size: 16px;
 		line-height: 32px;
 		border-radius: 5px;
+
+		@include screen-max(1400) {
+			width: 90.3%;
+			min-width: 1130px;
+			padding: 11px 44px 11px 16px;
+			font-size: 13px;
+		}
+
+		@include screen-max(1280) {
+			width: 100%;
+			min-width: auto;
+		}
 	}
 
 	.field-item {
@@ -65,6 +97,11 @@
 		font-size: 18px;
 		opacity: .5;
 
+		@include screen-max(1400) {
+			font-size: 14px;
+			line-height: 18px;
+		}
+
 		&:after {
 			content: '';
 			position: absolute;
@@ -83,12 +120,22 @@
 		top: calc(50% + 3px);
 		right: 12px;
 		transform: translateY(-50%);
+
+		@include screen-max(1400) {
+			right: 18px;
+		}
 	}
 }
 
 .request-qr-description {
 	.title {
 		margin-bottom: 18px;
+
+		@include screen-max(1400) {
+			font-size: 24px;
+			line-height: 42px;
+			letter-spacing: 1.5px;
+		}
 	}
 }
 
@@ -96,7 +143,7 @@
 	display: flex;
 
 	&:not(:last-child) {
-		margin-bottom: 35px;
+		margin-bottom: 33px;
 	}
 
 	.description-item-parameter {
@@ -104,6 +151,10 @@
 		padding-right: 15px;
 		display: flex;
 		align-items: flex-start;
+
+		@include screen-max(1400) {
+			min-width: 484px;
+		}
 
 		>span:first-child {
 			min-width: 40px;
@@ -129,8 +180,8 @@
 		padding: 0;
 		letter-spacing: .3px;
 
-		.thin {
-			font-weight: 300;
+		.italic {
+			font-style: italic;
 		}
 	}
 }

@@ -5,6 +5,10 @@
 	background: #2b2b2b;
 	color: #e6e1dc;
 	font-size: 14px;
+
+	@include screen-max(1000) {
+		padding: 23px 30px;
+	}
 }
 
 .hljs-comment,

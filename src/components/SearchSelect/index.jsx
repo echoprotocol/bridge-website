@@ -8,7 +8,7 @@ import Select from 'react-select';
 
 const assetsOptions = [
 	{
-		label: 'BTS',
+		label: 'ECHO',
 		id: '1.3.8',
 	},
 	{
@@ -35,7 +35,7 @@ const assetsOptions = [
 
 const tokenOptions = [
 	{
-		label: 'BTC',
+		label: 'ECHO',
 		id: '1.3.8',
 	},
 	{
@@ -138,13 +138,13 @@ class IntegrationReactSelect extends React.Component {
 			selectFields.forEach((field) => {
 				const fieldValue = field.innerText.toLowerCase();
 				const index = fieldValue.indexOf(selectValue);
-				if (index !== -1 ) {
+				if (index !== -1) {
 					const firstValue = fieldValue.split('').slice(0, index).join('').toUpperCase();
-					const higlightValue=fieldValue.split('').slice(index, index + selectValue.length).join('').toUpperCase();
+					const higlightValue = fieldValue.split('').slice(index, index + selectValue.length).join('').toUpperCase();
 					const secondValue = fieldValue.split('').slice(index + selectValue.length).join('').toUpperCase();
-					const firstEl=document.createElement('span');
+					const firstEl = document.createElement('span');
 					firstEl.innerText = firstValue;
-					const highlightEl=document.createElement('span');
+					const highlightEl = document.createElement('span');
 					highlightEl.classList.add('hightlight');
 					highlightEl.innerText = higlightValue;
 					const secondEl = document.createElement('span');
@@ -152,16 +152,15 @@ class IntegrationReactSelect extends React.Component {
 					while (field.firstChild) {
 						field.removeChild(field.firstChild);
 					}
-					field.append(firstValue, highlightEl, secondEl)
+					field.append(firstValue, highlightEl, secondEl);
 				}
-			})
+			});
 			this.setState({
 				isSearchEmpty: !!isSearchEmpty,
 			});
 			if (isSearchEmpty) {
-				select.classList.add('error')
-			}
-			else {
+				select.classList.add('error');
+			} else {
 				select.classList.remove('error');
 			}
 		}, 0);

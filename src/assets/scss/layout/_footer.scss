@@ -3,6 +3,19 @@ footer {
 	display: flex;
 	height: 60px;
 	background-color: #384549;
+
+	.col:nth-child(1) {
+		@include screen-max(1280) {
+			width: 42%;
+		}
+	}
+
+	.col:nth-child(2) {
+		@include screen-max(1280) {
+			width: 58%;
+			min-width: auto;
+		}
+	}
 }
 
 .ext {
@@ -10,6 +23,7 @@ footer {
 	align-items: center;
 	display: flex;
 	color: rgba(#fff, 0.6);
+	letter-spacing: 1px;
 
 	ul {
 		align-items: center;
@@ -52,21 +66,5 @@ footer {
 	color: rgba(#fff, 0.6);
 	font-size: 16px;
 	line-height: 32px;
-}
-
-@include screen-max(1350) {
-	footer {
-		.container {
-			max-width: 760px;
-
-			.col {
-				min-width: 50%;
-
-				&:nth-child(2) {
-					min-width: 50%;
-					text-align: right;
-				}
-			}
-		}
-	}
+	letter-spacing: 1px;
 }

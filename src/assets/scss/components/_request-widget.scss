@@ -1,22 +1,49 @@
 .request-widget {
-	padding: 117px 0 105px;
+	padding: 117px 0 104px;
 	background-color: #E8ECEF;
+
+	@include screen-max(1400) {
+		padding: 100px 0 100px;
+	}
+
+	@include screen-max(1280) {
+		padding: 67px 0 100px;
+	}
 }
 
 .request-widget-wrap {
 	width: 80.5%;
 	margin: 0 auto;
+
+	@include screen-max(1400) {
+		width: 815px;
+	}
 }
 
 .request-widget-title {
 	margin-bottom: 43px;
 	text-align: center;
+
+	@include screen-max(1400) {
+		margin-bottom: 32px;
+	}
 }
 
 .request-widget-info {
 	margin-bottom: 70px;
 	font-size: 24px;
 	line-height: 42px;
-	letter-spacing: 1.45px;
+	letter-spacing: 1.5px;
 	@include futura-medium();
+
+	@include screen-max(1400) {
+		margin-bottom: 49px;
+		font-size: 18px;
+		line-height: 32px;
+		letter-spacing: 1.1px;
+	}
+
+	@include screen-max(1000) {
+		margin-bottom: 48px;
+	}
 }

@@ -1,9 +1,22 @@
 .explaining {
-	padding: 115px 0 132px;
+	padding: 92px 0 132px;
+
+	@include screen-max(1400) {
+		padding: 92px 0 104px;
+	}
+
+	@include screen-max(1280) {
+		padding: 69px 0 84px;
+	}
 
 	.title {
 		margin-bottom: 55px;
 		width: 685px;
+
+		@include screen-max(1400) {
+			margin-bottom: 46px;
+			width: 530px;
+		}
 	}
 
 	.text {
@@ -12,6 +25,12 @@
 		font-size: 22px;
 		line-height: 36px;
 		letter-spacing: .5px;
+
+		@include screen-max(1400) {
+			font-size: 18px;
+			line-height: 32px;
+			letter-spacing: .36px;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 10px;

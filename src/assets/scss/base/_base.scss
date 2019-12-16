@@ -64,7 +64,13 @@ h3 {
 	line-height: 40px;
 	@include futura-heavy();
 	text-transform: uppercase;
-	letter-spacing: 1.65px;
+	letter-spacing: 1.7px;
+
+	@include screen-max(1400) {
+		font-size: 28px;
+		line-height: 36px;
+		letter-spacing: 1.3px;
+	}
 }
 
 h5 {
@@ -72,4 +78,10 @@ h5 {
 	line-height: 42px;
 	@include futura-medium();
 	letter-spacing: 1.5px;
+
+	@include screen-max(1400) {
+		font-size: 20px;
+		line-height: 28px;
+		letter-spacing: 1.2px;
+	}
 }

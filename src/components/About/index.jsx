@@ -3,7 +3,9 @@ import chrome from '../../assets/images/chrome.svg';
 import firefox from '../../assets/images/firefox.svg';
 import bidge from '../../assets/images/logo.svg';
 import brgScreens from '../../assets/images/brg-screens.png';
-
+import brgScreens1600 from '../../assets/images/brg-screens-1600.png';
+import brgScreens1400 from '../../assets/images/brg-screens-1400.png';
+import brgScreens1000 from '../../assets/images/brg-screens-1000.png';
 
 class About extends React.Component {
 
@@ -28,7 +30,7 @@ class About extends React.Component {
 								transactions & viewing your account history.
 								</p>
 							</div>
-							<div className="btn-wrap-2">
+							<div className="about-buttons">
 								<button className="btn-light">
 									<span className="icon">
 										<img src={chrome} alt="chrome" />
@@ -44,10 +46,13 @@ class About extends React.Component {
 							</div>
 						</div>
 						<div className="column" >
-
-
 							<div className="brg-screens">
-								<img src={brgScreens} alt="" />
+								<picture>
+									<source media="(max-width: 1000px)" srcSet={brgScreens1000} />
+									<source media="(max-width: 1400px)" srcSet={brgScreens1400} />
+									<source media="(max-width: 1600px)" srcSet={brgScreens1600} />
+									<img src={brgScreens} alt="" />
+								</picture>
 							</div>
 						</div>
 					</div>

@@ -1,14 +1,26 @@
 .qr-generator {
 	padding: 40px 25px 101px 50px;
 	background-color: #DFE4E8;
+
+	@include screen-max(1280) {
+		padding: 40px 25px 101px 47px;
+	}
 }
 
 .qr-generator-wrap {
 	margin-bottom: 64px;
+
+	@include screen-max(1400) {
+		margin-bottom: 71px;
+	}
 }
 
 .qr-generator-form {
 	margin-bottom: 38px;
+
+	@include screen-max(1400) {
+		margin-bottom: 36px;
+	}
 
 	&>.title {
 		margin-bottom: 21px;
@@ -16,6 +28,14 @@
 		font-size: 32px;
 		line-height: 42px;
 		letter-spacing: 1.2px;
+
+		@include screen-max(1400) {
+			margin-bottom: 24px;
+		}
+
+		@include screen-max(1280) {
+			margin-bottom: 22px;
+		}
 	}
 
 	&>.fields {
@@ -23,6 +43,11 @@
 		@include source();
 		font-size: 15px;
 		line-height: 32px;
+
+		@include screen-max(1400) {
+			margin-bottom: 6px;
+			font-size: 13px;
+		}
 	}
 
 	.dynamic-field {
@@ -37,6 +62,13 @@
 		border: 1px solid #fff;
 		transition: border .3s ease-in;
 
+		@include screen-max(1400) {
+			font-size: 13px;
+		}
+
+		@include screen-max(1280) {
+			margin: 0 6px;
+		}
 
 		&:focus {
 			border: 1px solid #a2adb3;
@@ -44,14 +76,28 @@
 
 		&.account {
 			width: 10.8%;
+
+			@include screen-max(1400) {
+				width: 100px;
+				margin-left: 1px;
+				margin-right: 3px;
+			}
 		}
 
 		&.id {
 			width: 22%;
+
+			@include screen-max(1400) {
+				width: 200px;
+			}
 		}
 
 		&.amount {
 			width: 22%;
+
+			@include screen-max(1400) {
+				width: 200px;
+			}
 		}
 	}
 
@@ -59,6 +105,11 @@
 		margin: 0 5px;
 		display: inline-block;
 		width: 9.5%;
+		height: 32px;
+
+		@include screen-max(1400) {
+			width: 100px;
+		}
 	}
 
 	&>.info {
@@ -68,6 +119,10 @@
 		color: #344148;
 		opacity: .5;
 		letter-spacing: .3px;
+
+		@include screen-max(1400) {
+			font-size: 15px;
+		}
 	}
 }
 
@@ -84,5 +139,9 @@
 		width: 82.15%;
 		background-color: #fff;
 		color: #4C8BF5;
+
+		@include screen-max(1400) {
+			width: 800px;
+		}
 	}
 }
