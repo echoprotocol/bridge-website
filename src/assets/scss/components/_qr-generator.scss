@@ -1,9 +1,21 @@
 .qr-generator {
-	padding: 40px 25px 101px 50px;
+	padding: 39px 25px 102px 50px;
 	background-color: #DFE4E8;
 
 	@include screen-max(1280) {
-		padding: 40px 25px 101px 47px;
+		padding: 40px 25px 101px 50px;
+	}
+
+	@include screen-max(1000) {
+		padding: 39px 40px 50px 40px;
+	}
+
+	@include less(768) {
+		padding: 40px 20px 50px 20px;
+	}
+
+	@include less(500) {
+		padding: 27px 8px 50px 8px;
 	}
 }
 
@@ -13,6 +25,22 @@
 	@include screen-max(1400) {
 		margin-bottom: 71px;
 	}
+
+	@include screen-max(768) {
+		margin-bottom: 69px;
+	}
+
+	@include less(768) {
+		margin-bottom: 40px;
+		width: calc(100% + 40px);
+		transform: translateX(-20px);
+	}
+
+	@include less(500) {
+		margin-bottom: 23px;
+		width: calc(100% + 16px);
+		transform: translateX(-8px);
+	}
 }
 
 .qr-generator-form {
@@ -20,6 +48,14 @@
 
 	@include screen-max(1400) {
 		margin-bottom: 36px;
+	}
+
+	@include screen-max(1000) {
+		margin-bottom: 33px;
+	}
+
+	@include less(768) {
+		margin-bottom: 26px;
 	}
 
 	&>.title {
@@ -36,6 +72,12 @@
 		@include screen-max(1280) {
 			margin-bottom: 22px;
 		}
+
+		@include less(500) {
+			margin-bottom: 16px;
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 
 	&>.fields {
@@ -44,9 +86,37 @@
 		font-size: 15px;
 		line-height: 32px;
 
+		@include screen-max(1600) {
+			margin-bottom: 5px;
+		}
+
 		@include screen-max(1400) {
 			margin-bottom: 6px;
 			font-size: 13px;
+		}
+
+		@include screen-max(1000) {
+			margin-bottom: 7px;
+		}
+
+		@include less(768) {
+			margin-bottom: 18px;
+			line-height: 30px;
+		}
+	}
+
+	.static-field:first-child {
+		@include less(768) {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+
+	.static-field:not(:first-child) {
+		margin: 0 5px;
+
+		@include less(768) {
+			margin: 0 4px;
 		}
 	}
 
@@ -56,7 +126,6 @@
 		font-size: 16px;
 		line-height: 32px;
 		height: 32px;
-		margin: 0 5px;
 		border-radius: 5px;
 		outline: none;
 		border: 1px solid #fff;
@@ -66,8 +135,17 @@
 			font-size: 13px;
 		}
 
-		@include screen-max(1280) {
-			margin: 0 6px;
+		@include screen-max(1158) {
+			margin-bottom: 10px;
+		}
+
+		@include less(768) {
+			margin-bottom: 0;
+			margin-top: 10px;
+		}
+
+		@include less(500) {
+			margin-top: 19px;
 		}
 
 		&:focus {
@@ -79,8 +157,11 @@
 
 			@include screen-max(1400) {
 				width: 100px;
-				margin-left: 1px;
-				margin-right: 3px;
+			}
+
+			@include less(500) {
+				margin-top: 8px;
+				width: calc(100% - 16px);
 			}
 		}
 
@@ -90,6 +171,14 @@
 			@include screen-max(1400) {
 				width: 200px;
 			}
+
+			@include less(768) {
+				width: 172px;
+			}
+
+			@include less(500) {
+				width: calc(50% - 16px);
+			}
 		}
 
 		&.amount {
@@ -98,17 +187,29 @@
 			@include screen-max(1400) {
 				width: 200px;
 			}
+
+			@include less(500) {
+				width: calc(50% - 16px);
+			}
 		}
 	}
 
 	.dropdown-field {
-		margin: 0 5px;
 		display: inline-block;
 		width: 9.5%;
 		height: 32px;
 
 		@include screen-max(1400) {
 			width: 100px;
+		}
+
+		@include less(768) {
+			margin-top: 10px;
+		}
+
+		@include less(500) {
+			margin-top: 19px;
+			width: calc(50% - 16px);
 		}
 	}
 
@@ -129,19 +230,25 @@
 .qr-generator-result {
 	.title {
 		margin-bottom: 3px;
-		font-size: 24px;
-		line-height: 42px;
-		@include futura-medium();
-		letter-spacing: 1.5px;
+
+		@include screen-max(1600) {
+			margin-bottom: 0;
+		}
+
+		@include less(500) {
+			margin-bottom: 2px;
+		}
 	}
 
 	.copy-field {
 		width: 82.15%;
-		background-color: #fff;
-		color: #4C8BF5;
 
 		@include screen-max(1400) {
-			width: 800px;
+			max-width: 800px;
+		}
+
+		@include screen-max(1000) {
+			width: 100%;
 		}
 	}
 }

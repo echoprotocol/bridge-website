@@ -12,7 +12,9 @@ class Footer extends React.Component {
 					<div className="row">
 						<div className="col">
 							<div className="ext">
-							Get extension:
+								<span>Get</span>
+								<span>&nbsp;extension</span>
+								:
 								<ul>
 									<li>
 										<a href=""><img src={chrome} alt="" /></a>

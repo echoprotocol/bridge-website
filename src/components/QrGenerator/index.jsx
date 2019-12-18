@@ -1,14 +1,14 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 
 import DefaultSelect from '../DefaultSelect';
-import CopyButton from '../CopyButton';
+import CopyField from '../CopyField';
 
 export default class QrGenerator extends Component {
 
 	state = {
 		selectOptions: [
-			{ label: 'assets' },
-			{ label: 'tokens' },
+			{ label: 'asset' },
+			{ label: 'token' },
 		].map((option) => ({
 			value: option.label,
 			label: option.label,
@@ -48,9 +48,9 @@ export default class QrGenerator extends Component {
 		return (
 			<div className="qr-generator">
 				<div className="qr-generator-form">
-					<h4 className="title">
+					<div className="title">
 						Try lt
-					</h4>
+					</div>
 					<div className="fields">
 						<span className="static-field">
 							https://echo-bridge.io/receive/
@@ -76,13 +76,13 @@ export default class QrGenerator extends Component {
 					</div>
 				</div>
 				<div className="qr-generator-result">
-					<h5 className="title">Result</h5>
-					<div className="copy-field">
-						<span className="copy-field-value">
-							{`https://echo-bridge.io/receive/${account}/${currency}/${id}/${amount}/qr-code.png`}
-						</span>
-						<CopyButton value={`https://echo-bridge.io/receive/${account}/${currency}/${id}/${amount}/qr-code.png`} color="#ABB2B4" />
-					</div>
+					<h4 className="title">Result</h4>
+					<CopyField
+						value={`https://echo-bridge.io/receive/${account}/${currency}/${id}/${amount}/qr-code.png`}
+						iconColor="#ABB2B4"
+						textColor="#4C8BF5"
+						backgroundColor="#fff"
+					/>
 				</div>
 			</div>
 		);

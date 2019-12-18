@@ -1,14 +1,74 @@
 import React, { Component } from 'react';
 import WidgetFormField from '../WidgetFormField';
 import SearchSelect from '../SearchSelect';
-import CopyButton from '../CopyButton';
+import CopyField from '../CopyField';
+
 
 export default class WidgetForm extends Component {
 
 	state = {
 		generatedWidget: '',
+		options: [
+			{
+				label: 'Tokens',
+				options: [
+					{
+						label: 'ECHO',
+						id: '1.3.8',
+					},
+					{
+						label: 'BST',
+						id: '1.3.5',
+					},
+					{
+						label: 'BUS',
+						id: '1.4.8',
+					},
+					{
+						label: 'BUZ',
+						id: '1.2.4',
+					},
+					{
+						label: 'FIZ',
+						id: '5.2.1',
+					},
+				].map((option) => ({
+					value: option.label,
+					label: option.label,
+					id: option.id,
+				})),
+			},
+			{
+				label: 'Assets',
+				options: [
+					{
+						label: 'ECHO',
+						id: '1.3.8',
+					},
+					{
+						label: 'PST',
+						id: '1.3.5',
+					},
+					{
+						label: 'BLS',
+						id: '1.4.8',
+					},
+					{
+						label: 'BUZ',
+						id: '1.2.4',
+					},
+					{
+						label: 'FIZ',
+						id: '5.2.1',
+					},
+				].map((option) => ({
+					value: option.label,
+					label: option.label,
+					id: option.id,
+				})),
+			},
+		],
 	}
-
 	toggleError = () => {
 		this.setState({
 			error: this.state.error ? null : "Account name shouldn't be empty",
@@ -34,20 +94,17 @@ export default class WidgetForm extends Component {
 					className="md"
 					error={null}
 				/>
-				<SearchSelect classNameWrap="search-select-wrap" />
+				<div className="search-select-wrap">
+					<SearchSelect classNameWrap="search-select-wrap" options={this.state.options} />
+				</div>
 				{
 					this.state.generatedWidget &&
 					<div className="widget-form-widget">
-						<div className="copy-field">
-							<span className="copy-field-value">
-								{this.state.generatedWidget}
-							</span>
-							<CopyButton value={this.state.generatedWidget} iconColor="#ABB2B4" />
-						</div>
+						<CopyField value={this.state.generatedWidget} textColor="#fff" backgroundColor="#566469" iconColor="#ABB2B4" />
 					</div>
 				}
 				<div className="widget-button">
-					<button className="btn-primary">
+					<button className="btn-primary lg">
 						<span className="text">Generate Widget</span>
 					</button>
 				</div>

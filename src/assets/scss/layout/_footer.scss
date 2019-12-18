@@ -5,15 +5,40 @@ footer {
 	background-color: #384549;
 
 	.col:nth-child(1) {
+		@include screen-max(1400) {
+			width: 52%;
+		}
+
 		@include screen-max(1280) {
 			width: 42%;
+		}
+
+		@include screen-max(1000) {
+			width: 42.5%;
+		}
+
+		@include screen-max(768) {
+			width: 50%;
 		}
 	}
 
 	.col:nth-child(2) {
+		@include screen-max(1400) {
+			width: 48%;
+			min-width: auto;
+		}
+
 		@include screen-max(1280) {
 			width: 58%;
-			min-width: auto;
+		}
+
+		@include screen-max(1000) {
+			width: 57.5%;
+		}
+
+		@include screen-max(768) {
+			text-align: right;
+			width: 50%;
 		}
 	}
 }
@@ -24,6 +49,20 @@ footer {
 	display: flex;
 	color: rgba(#fff, 0.6);
 	letter-spacing: 1px;
+
+	@include screen-max(1000) {
+		padding-left: 20px;
+	}
+
+	@include screen-max(768) {
+		padding-left: 0;
+	}
+
+	span:nth-child(2) {
+		@include less(500) {
+			display: none;
+		}
+	}
 
 	ul {
 		align-items: center;

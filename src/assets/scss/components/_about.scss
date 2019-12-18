@@ -1,24 +1,36 @@
 .about-section {
-	padding: 204px 0 220px;
+	padding: 204px 0 222px;
 	background-color: #e0e4e8;
 	background-image: url("../images/about-bg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	@include screen-max(1600) {
-		padding: 204px 0 149px;
+		padding: 204px 0 148px;
 	}
 
 	@include screen-max(1400) {
-		padding: 204px 0 54px;
+		padding: 195px 0 53px;
 	}
 
 	@include screen-max(1280) {
-		padding: 204px 0 66px;
+		padding: 181px 0 67px;
 	}
 
 	@include screen-max(1000) {
-		padding: 204px 0 124px;
+		padding: 181px 0 124px;
+	}
+
+	@include screen-max(768) {
+		padding: 187px 0 192px;
+	}
+
+	@include less(768) {
+		padding: 113px 0 112px;
+	}
+
+	@include less(500) {
+		padding: 45px 0 37px;
 	}
 
 	.logo {
@@ -27,6 +39,10 @@
 
 		@include screen-max(1400) {
 			max-width: 322px;
+		}
+
+		@include less(500) {
+			max-width: 240px;
 		}
 	}
 }
@@ -59,8 +75,15 @@
 			}
 
 			@include screen-max(1000) {
-				width: 470px;
-				min-width: 470px;
+				padding-right: 10px;
+				width: 495px;
+				min-width: 495px;
+			}
+
+			@include screen-max(768) {
+				padding-right: 0;
+				min-width: auto;
+				width: 100%;
 			}
 		}
 
@@ -73,6 +96,10 @@
 
 			@include screen-max(1280) {
 				justify-content: flex-end;
+			}
+
+			@include screen-max(768) {
+				display: none;
 			}
 		}
 	}
@@ -121,16 +148,33 @@
 	flex-wrap: wrap;
 	display: flex;
 
+	@include less(768) {
+		justify-content: space-between;
+	}
+
+	@include less(500) {
+		flex-direction: column;
+		align-items: center;
+	}
+
 	button {
 		&:not(:last-child) {
-			margin-right: 35px;
+			margin-right: 30px;
 
-			@include screen-max(1480) {
-				margin-right: 20px;
+			@include screen-max(1400) {
+				margin-right: 23px;
 			}
 
 			@include screen-max(1000) {
-				margin-right: 17px;
+				margin-right: 10px;
+			}
+
+			@include less(768) {
+				margin-right: 0;
+			}
+
+			@include less(500) {
+				margin-bottom: 16px;
 			}
 		}
 	}
@@ -138,9 +182,6 @@
 
 .tagline {
 	@include futura-demi();
-
-
-
 	padding: 22px 0;
 	color: rgba(#344045, 0.5);
 	font-size: 21px;
@@ -155,6 +196,16 @@
 
 	@include screen-max(900) {
 		line-height: 32px;
+	}
+
+	@include screen-max(768) {
+		padding: 4px 0 0;
+	}
+
+	@include less(500) {
+		padding: 0;
+		font-size: 12px;
+		letter-spacing: 2.15px;
 	}
 }
 
@@ -172,7 +223,19 @@
 	}
 
 	@include screen-max(1000) {
+		padding: 20px 20px 28px 0;
+	}
+
+	@include screen-max(768) {
 		padding: 20px 0 28px;
+	}
+
+	@include less(768) {
+		padding: 20px 0 47px;
+	}
+
+	@include less(500) {
+		padding: 17px 0 16px;
 	}
 
 	p {
@@ -190,6 +253,12 @@
 			letter-spacing: 1.1px;
 		}
 
+		@include less(500) {
+			font-size: 16px;
+			line-height: 24px;
+			letter-spacing: .95px;
+		}
+
 		&:nth-child(1) {
 			margin: 24px 0 0;
 
@@ -199,6 +268,18 @@
 
 			@include screen-max(1280) {
 				margin: 33px 0 0;
+			}
+
+			@include screen-max(768) {
+				margin: 26px 0 0;
+			}
+
+			@include less(768) {
+				margin: 15px 0 0;
+			}
+
+			@include less(500) {
+				margin: 0;
 			}
 		}
 

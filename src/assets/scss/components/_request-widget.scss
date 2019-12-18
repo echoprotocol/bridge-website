@@ -1,5 +1,5 @@
 .request-widget {
-	padding: 117px 0 104px;
+	padding: 116px 0 103px;
 	background-color: #E8ECEF;
 
 	@include screen-max(1400) {
@@ -7,7 +7,19 @@
 	}
 
 	@include screen-max(1280) {
-		padding: 67px 0 100px;
+		padding: 69px 0 81px;
+	}
+
+	@include screen-max(1000) {
+		padding: 69px 0 79px;
+	}
+
+	@include less(768) {
+		padding: 57px 0 0;
+	}
+
+	@include less(500) {
+		padding: 39px 0 0;
 	}
 }
 
@@ -18,6 +30,14 @@
 	@include screen-max(1400) {
 		width: 815px;
 	}
+
+	@include screen-max(1000) {
+		width: 91%;
+	}
+
+	@include screen-max(768) {
+		width: 100%;
+	}
 }
 
 .request-widget-title {
@@ -25,7 +45,17 @@
 	text-align: center;
 
 	@include screen-max(1400) {
-		margin-bottom: 32px;
+		margin-bottom: 30px;
+	}
+
+	@include less(768) {
+		margin: 0 auto 28px;
+		width: 95%;
+	}
+
+	@include less(500) {
+		margin: 0 auto 15px;
+		width: 100%;
 	}
 }
 
@@ -36,14 +66,32 @@
 	letter-spacing: 1.5px;
 	@include futura-medium();
 
+	@include screen-max(1600) {
+		letter-spacing: 1.47px;
+	}
+
 	@include screen-max(1400) {
-		margin-bottom: 49px;
+		margin-bottom: 45px;
 		font-size: 18px;
 		line-height: 32px;
 		letter-spacing: 1.1px;
 	}
 
 	@include screen-max(1000) {
+		margin-bottom: 48px;
+		letter-spacing: 1.05px;
+	}
+
+	@include less(768) {
+		margin-bottom: 64px;
+	}
+
+	@include less(500) {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	@include less(500) {
 		margin-bottom: 48px;
 	}
 }

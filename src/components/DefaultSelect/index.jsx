@@ -78,11 +78,9 @@ class DefaultSelect extends React.Component {
 DefaultSelect.defaultProps = {
 	defaultValue: null,
 	options: null,
-	onSelectChange: null,
 };
 DefaultSelect.propTypes = {
 	defaultValue: PropTypes.object,
 	options: PropTypes.array,
-	onSelectChange: PropTypes.func,
 };
 export default DefaultSelect;

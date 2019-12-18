@@ -64,3 +64,9 @@
 		}
 	}
 }
+
+@mixin onlyHover() {
+	@media (hover: hover) {
+		@content
+	}
+}

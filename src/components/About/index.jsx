@@ -31,13 +31,13 @@ class About extends React.Component {
 								</p>
 							</div>
 							<div className="about-buttons">
-								<button className="btn-light">
+								<button className="btn-light iconed">
 									<span className="icon">
 										<img src={chrome} alt="chrome" />
 									</span>
 									<span className="text">Get Chrome Extension</span>
 								</button>
-								<button className="btn-light">
+								<button className="btn-light iconed">
 									<span className="icon">
 										<img src={firefox} alt="firefox" />
 									</span>

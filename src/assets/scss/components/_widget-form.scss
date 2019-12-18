@@ -5,13 +5,34 @@
 	background-color: #DFE4E8;
 
 	@include screen-max(1400) {
-		width: 94%;
-		padding: 33px 63px 93px 66px;
+		width: 95%;
+		padding: 38px 63px 93px 66px;
+	}
+
+	@include screen-max(1280) {
+		padding: 38px 66px 92px 66px;
 	}
 
 	@include screen-max(1000) {
-		padding: 62px 13% 93px 13%;
-		width: 92%;
+		padding: 62px 13% 105px 13.3%;
+		width: 93.5%;
+	}
+
+	@include screen-max(768) {
+		padding: 40px 15% 105px 15%;
+		width: 100%;
+	}
+
+	@include less(768) {
+		padding: 42px 9.5% 52px 9.5%;
+		width: calc(100% + 80px);
+		transform: translateX(-40px);
+	}
+
+	@include less(500) {
+		padding: 40px 16px 49px;
+		width: calc(100% + 32px);
+		transform: translateX(-16px);
 	}
 }
 
@@ -23,9 +44,31 @@
 	line-height: 40px;
 	text-align: center;
 
+	@include screen-max(1400) {
+		margin-bottom: 10px;
+	}
+
 	@include screen-max(1000) {
+		margin-bottom: 8px;
 		font-size: 24px;
 		line-height: 36px;
+	}
+
+	@include screen-max(768) {
+		margin-bottom: 30px;
+		font-size: 20px;
+		letter-spacing: .8px;
+	}
+
+	@include less(768) {
+		margin-bottom: 13px;
+	}
+
+	@include less(500) {
+		margin: 0 auto 6px;
+		max-width: 175px;
+		font-size: 24px;
+		line-height: 32px;
 	}
 }
 
@@ -33,11 +76,19 @@
 	display: inline-block;
 	position: relative;
 
+	@include less(500) {
+		margin-bottom: 17px;
+	}
+
 	&:first-of-type {
 		margin-bottom: 10px;
 
 		@include screen-max(1000) {
 			margin-bottom: 15px;
+		}
+
+		@include less(500) {
+			margin-bottom: 17px;
 		}
 	}
 
@@ -55,21 +106,46 @@
 	&.md {
 		width: 66.66%;
 
+		@include screen-max(768) {
+			width: 65%;
+		}
+
+		@include less(768) {
+			width: 60.5%;
+		}
+
+		@include less(500) {
+			width: 100%;
+		}
+
 		input {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
+
+			@include less(500) {
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
 		}
 	}
 
 	.label {
 		font-size: 16px;
-		line-height: 31px;
+		line-height: 30px;
 		@include futura-medium();
 		display: block;
+
+		@include less(768) {
+			line-height: 30px;
+		}
+
+		@include less(500) {
+			line-height: 28px;
+		}
 	}
 
 	.field {
-		padding: 12px 20px;
+		padding: 12px 22px;
 		width: 100%;
 		@include futura-medium();
 		font-size: 22px;
@@ -77,13 +153,16 @@
 		background: #fff;
 		border-radius: 8px;
 		outline: none;
-		border: none;
-		border: 1px solid transparent;
+		border: 1px solid #fff;
 		transition: background .3s ease-in, border .3s ease-in;
 
 		@include screen-max(1000) {
 			font-size: 18px;
 			padding: 5px 20px;
+		}
+
+		@include less(500) {
+			padding: 5px 12px;
 		}
 
 		&:focus {
@@ -114,13 +193,7 @@
 }
 
 .widget-form-widget {
-	font-size: 15px;
 	margin-bottom: 25px;
-
-	.copy-field {
-		background-color: #566469;
-		color: #fff;
-	}
 }
 
 .widget-button {

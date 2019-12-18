@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import CopyButton from '../CopyButton';
 import QrGenerator from '../QrGenerator';
+import Media from 'react-media';
 
 const RequestQr = () => (
 	<section className="request-qr">
@@ -11,14 +12,40 @@ const RequestQr = () => (
 			</div>
 			<div className="request-qr-field">
 				<h5 className="title">
-						You can use the following URL to generate a payment request QR code:
+					You can use the following URL to generate a payment request QR code:
 				</h5>
 
 				<div className="field-label">
-						URL
+					URL
 				</div>
+				<Media queries={{
+					medium: '(min-width: 501px) and (max-width: 1200px)',
+				}}
+				>
+					{(matches) => (
+						<Fragment>
+							{matches.medium &&
+								<span className="field-item prefix">https://echo-bridge.io/receive/</span>
+							}
+						</Fragment>
+					)}
+				</Media>
 				<div className="field">
-					<span className="field-item prefix">https://echo-bridge.io/receive/</span>
+					<Media queries={{
+						large: '(min-width: 1201px)',
+						small: '(max-width:500px)',
+					}}
+					>
+						{(matches) => (
+							<Fragment>
+								{matches.large &&
+									<span className="field-item prefix">https://echo-bridge.io/receive/</span>
+								}
+								{matches.small &&
+									<span className="field-item prefix">https://echo-bridge.io/receive/</span>}
+							</Fragment>
+						)}
+					</Media>
 					<span className="field-item account">
 						<span>{'{account}'}</span>
 						<span className="field-item-mark">1</span>
@@ -38,14 +65,61 @@ const RequestQr = () => (
 						<span>{'{amount-without-delimeter}'}</span>
 						<span className="field-item-mark">3</span>
 					</span>
-					<span className="field-item postfix">/qr-code.png</span>
-					<span className="field-copy">
-						<CopyButton color="#ABB2B4" value={'https://echo-bridge.io/receive/{account}/{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/qr-code.png'} />
-					</span>
+					<Media queries={{
+						large: '(min-width: 925px)',
+						small: '(max-width: 500px)',
+					}}
+					>
+						{(matches) => (
+							<Fragment>
+								{matches.large &&
+									<span className="field-item postfix">/qr-code.png</span>
+								}
+								{matches.small &&
+									<span className="field-item postfix">/qr-code.png</span>
+								}
+							</Fragment>
+						)}
+					</Media>
+					<Media
+						query="(min-width: 769px)"
+						render={() =>
+							(
+								<span className="field-copy">
+									<CopyButton color="#ABB2B4" value={'https://echo-bridge.io/receive/{account}/{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/qr-code.png'} />
+								</span>
+							)}
+					/>
 				</div>
+				<Media queries={{
+					medium: '(min-width: 501px) and (max-width: 924px)',
+				}}
+				>
+					{(matches) => (
+						<Fragment>
+							{matches.medium &&
+							<span className="field-item postfix">/qr-code.png</span>
+							}
+						</Fragment>
+					)}
+				</Media>
+				<Media queries={{
+					medium: '(min-width: 501px) and (max-width: 768px)',
+				}}
+				>
+					{(matches) => (
+						<Fragment>
+							{matches.medium &&
+								<span className="field-copy">
+									<CopyButton color="#ABB2B4" value={'https://echo-bridge.io/receive/{account}/{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/qr-code.png'} withText />
+								</span>
+							}
+						</Fragment>
+					)}
+				</Media>
 			</div>
 			<div className="request-qr-description">
-				<h5 className="title">Parameter description</h5>
+				<h4 className="title">Parameter description</h4>
 				<div className="description-item">
 					<div className="description-item-parameter">
 						<span>1.</span>

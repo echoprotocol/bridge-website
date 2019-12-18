@@ -52,6 +52,7 @@
 		"react-dom": "^16.2.0",
 		"react-highlight": "^0.12.0",
 		"react-hot-loader": "^4.0.0",
+		"react-media": "^1.10.0",
 		"react-perfect-scrollbar": "^1.4.4",
 		"react-redux": "^6.0.0",
 		"react-router": "^4.2.0",

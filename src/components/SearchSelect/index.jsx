@@ -1,75 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
-import React, { createRef, useRef } from 'react';
+import React, { Fragment, createRef, useRef } from 'react';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
 import Select from 'react-select';
 
-const assetsOptions = [
-	{
-		label: 'ECHO',
-		id: '1.3.8',
-	},
-	{
-		label: 'BST',
-		id: '1.3.5',
-	},
-	{
-		label: 'BUS',
-		id: '1.4.8',
-	},
-	{
-		label: 'BUZ',
-		id: '1.2.4',
-	},
-	{
-		label: 'FIZ',
-		id: '5.2.1',
-	},
-].map((option) => ({
-	value: option.label,
-	label: option.label,
-	id: option.id,
-}));
-
-const tokenOptions = [
-	{
-		label: 'ECHO',
-		id: '1.3.8',
-	},
-	{
-		label: 'PST',
-		id: '1.3.5',
-	},
-	{
-		label: 'BLS',
-		id: '1.4.8',
-	},
-	{
-		label: 'BUZ',
-		id: '1.2.4',
-	},
-	{
-		label: 'FIZ',
-		id: '5.2.1',
-	},
-].map((option) => ({
-	value: option.label,
-	label: option.label,
-	id: option.id,
-}));
-
-const options = [
-	{
-		label: 'Tokens',
-		options: tokenOptions,
-	},
-	{
-		label: 'Assets',
-		options: assetsOptions,
-	},
-];
+import PropTypes from 'prop-types';
 
 function MenuList(props) {
 	return (
@@ -122,7 +59,7 @@ const SingleValue = ({ selectProps, data }) => (
 );
 
 
-class IntegrationReactSelect extends React.Component {
+class SearchSelect extends React.Component {
 
 	state={
 		isSearchEmpty: false,
@@ -179,9 +116,10 @@ class IntegrationReactSelect extends React.Component {
 
 	render() {
 		const selectRef = createRef();
-		const { classNameWrap } = this.props;
+		const { options } = this.props;
 		return (
-			<div className={classNameWrap}>
+			<Fragment>
+				<label htmlFor="react-select-2-input" className="label"> Currency </label>
 				<Select
 					ref={selectRef}
 					onKeyDown={() => this.onKeyDown(selectRef)}
@@ -200,10 +138,17 @@ class IntegrationReactSelect extends React.Component {
 					defaultValue={options[0].options[0]}
 				/>
 				<div className={classnames('error-message', { active: this.state.isSearchEmpty })}>Invalid currency</div>
-			</div>
+			</Fragment>
 		);
 	}
 
 }
 
-export default IntegrationReactSelect;
+SearchSelect.propTypes = {
+	options: PropTypes.oneOfType([
+		PropTypes.array,
+		PropTypes.object,
+	]).isRequired,
+};
+
+export default SearchSelect;

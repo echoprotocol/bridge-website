@@ -1,39 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CopyButton from '../CopyButton';
+import PropTypes from 'prop-types';
 
-class CopyField extends Component {
+const CopyField = ({
+	value, iconColor, textColor, backgroundColor,
+}) => (
+	<div
+		className="copy-field"
+		style={{
+			color: textColor,
+			backgroundColor,
+		}}
+	>
+		<span className="copy-field-value">
+			{value}
+		</span>
+		<CopyButton value={value} color={iconColor} />
+	</div>
+);
 
+CopyField.defaultProps = {
+	iconColor: '#ABB2B4',
+	textColor: '#fff',
+	backgroundColor: '#566469',
+};
 
-	onCopy = () => {
-		if (!this.state.isCopied) {
-			this.setState({
-				isCopied: true,
-			});
-			setTimeout(() => {
-				this.setState({
-					isCopied: false,
-				});
-			}, 3000);
-		}
-	};
-
-	render() {
-		const { color, background, value } = this.props;
-
-		const fieldStyles = {
-			color,
-			backgroundColor: background,
-		};
-		return (
-			<div className="copy-field" style={fieldStyles}>
-				<span className="copy-field-value">
-					{value}
-				</span>
-				<CopyButton value={value} />
-			</div >
-		);
-	}
-
-}
+CopyField.propTypes = {
+	value: PropTypes.string.isRequired,
+	iconColor: PropTypes.string,
+	textColor: PropTypes.string,
+	backgroundColor: PropTypes.string,
+};
 
 export default CopyField;

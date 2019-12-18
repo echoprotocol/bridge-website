@@ -6,8 +6,33 @@
 	background-repeat: no-repeat;
 	background-position: 30.2% 52%;
 
-	.btn-light {
-		min-width: 200px;
+	@include screen-max(1600) {
+		background-position: 5% 52%;
+	}
+
+	@include screen-max(1400) {
+		background-position: 0% 52%;
+		padding: 103px 0 106px;
+	}
+
+	@include screen-max(1000) {
+		padding: 103px 0 107px;
+		background-size: 58%;
+	}
+
+	@include screen-max(768) {
+		background-size: 70%;
+		background-position: -100% 52%;
+	}
+
+	@include less(768) {
+		padding: 106px 0 88px;
+		background-size: 81%;
+		background-position: -170px 100px;
+	}
+
+	@include less(500) {
+		padding: 46px 0;
 	}
 
 	.col:first-child {
@@ -17,6 +42,18 @@
 
 		@include screen-max(1280) {
 			width: 42%;
+		}
+
+		@include screen-max(1000) {
+			width: 42.5%;
+		}
+
+		@include screen-max(768) {
+			width: 31%;
+		}
+
+		@include less(768) {
+			display: none;
 		}
 	}
 
@@ -28,6 +65,31 @@
 
 		@include screen-max(1280) {
 			width: 58%;
+		}
+
+		@include screen-max(1000) {
+			width: 57.5%;
+		}
+
+		@include screen-max(768) {
+			width: 69%;
+		}
+
+		@include less(768) {
+			width: 100%;
+		}
+	}
+
+	.btn-light {
+		min-width: 200px;
+
+		@include screen-max(1400) {
+			min-width: 160px;
+		}
+
+		@include less(500) {
+			min-width: 260px;
+			margin: 0 auto;
 		}
 	}
 }
@@ -41,8 +103,15 @@
 	text-transform: uppercase;
 
 	@include screen-max(1400) {
-		margin-bottom: 43px;
+		margin-bottom: 20px;
 		letter-spacing: 4.8px;
+	}
+
+	@include less(500) {
+		margin-bottom: 17px;
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: 3.6px;
 	}
 }
 
@@ -56,8 +125,16 @@
 	line-height: 43px;
 
 	@include screen-max(1400) {
+		margin: 0 0 41px 0;
 		font-size: 20px;
 		line-height: 36px;
 		letter-spacing: 1.2px;
+	}
+
+	@include less(500) {
+		margin-bottom: 40px;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: .95px;
 	}
 }

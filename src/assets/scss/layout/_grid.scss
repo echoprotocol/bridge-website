@@ -16,7 +16,7 @@ section {
 		width: 100%;
 
 		&:nth-child(2) {
-			min-width: 760px;
+			min-width: 757px;
 
 			@include screen-max(1280) {
 				min-width: auto;
@@ -42,5 +42,17 @@ section {
 @include screen-max(1000) {
 	.container {
 		padding: 0 56px;
+	}
+}
+
+@include less(768) {
+	.container {
+		padding: 0 40px;
+	}
+}
+
+@include less(500) {
+	.container {
+		padding: 0 16px;
 	}
 }
