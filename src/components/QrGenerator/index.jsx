@@ -62,7 +62,6 @@ export default class QrGenerator extends Component {
 								onChange={this.onSelectChange}
 								options={selectOptions}
 								defaultValue={selectOptions[0]}
-								onSelectChange={this.onSelectChange}
 							/>
 						</span>
 						<span className="static-field">-</span>
@@ -72,7 +71,7 @@ export default class QrGenerator extends Component {
 						<span className="static-field">/qr-code.png</span>
 					</div>
 					<div className="info">
-						You can replace optional fields with "-"
+						You can replace optional fields with &quot;-&quot;
 					</div>
 				</div>
 				<div className="qr-generator-result">

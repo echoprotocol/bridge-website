@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/react-in-jsx-scope */
 import React, { Fragment, createRef, useRef } from 'react';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
 import Select from 'react-select';
-
 import PropTypes from 'prop-types';
+import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
+
 
 function MenuList(props) {
 	return (
@@ -61,11 +60,14 @@ const SingleValue = ({ selectProps, data }) => (
 
 class SearchSelect extends React.Component {
 
-	state={
-		isSearchEmpty: false,
+	constructor(props) {
+		super(props);
+		this.state = {
+			isSearchEmpty: false,
+		};
 	}
 
-	onKeyDown = (selectRef) => {
+	onKeyDown(selectRef) {
 		const select = selectRef.current.select.controlRef.offsetParent;
 		setTimeout(() => {
 			const isSearchEmpty = select.querySelector('.search-select__menu-notice');
@@ -101,9 +103,9 @@ class SearchSelect extends React.Component {
 				select.classList.remove('error');
 			}
 		}, 0);
-	};
+	}
 
-	onBlur = (selectRef) => {
+	onBlur(selectRef) {
 		const select = selectRef.current.select.controlRef.offsetParent;
 		const isError = select.classList.contains('error');
 		if (isError) {

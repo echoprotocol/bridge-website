@@ -5,8 +5,11 @@ import PropTypes from 'prop-types';
 
 class CopyButton extends Component {
 
-	state = {
-		isCopied: false,
+	constructor(props) {
+		super(props);
+		this.state = {
+			isCopied: false,
+		};
 	}
 
 	onCopy = () => {
@@ -47,6 +50,7 @@ class CopyButton extends Component {
 	}
 
 }
+
 CopyButton.defaultProps = {
 	color: '#ABB2B4',
 	withText: false,

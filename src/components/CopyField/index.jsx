@@ -1,6 +1,6 @@
 import React from 'react';
-import CopyButton from '../CopyButton';
 import PropTypes from 'prop-types';
+import CopyButton from '../CopyButton';
 
 const CopyField = ({
 	value, iconColor, textColor, backgroundColor,

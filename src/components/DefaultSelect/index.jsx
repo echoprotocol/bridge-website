@@ -1,9 +1,9 @@
 import React, { createRef, useRef } from 'react';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
 import Select, { components } from 'react-select';
 import PropTypes from 'prop-types';
+import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
 import arrow from '../../assets/images/dropdown-arrow.svg';
 
 function MenuList(props) {
@@ -48,9 +48,10 @@ const CustomOption = ({
 	);
 };
 
+// eslint-disable-next-line no-undef
 const DropdownIndicator = (props: ElementConfig<typeof components.DropdownIndicator>) => (
 	<components.DropdownIndicator {...props}>
-		<img src={arrow} />
+		<img src={arrow} alt="" />
 	</components.DropdownIndicator>
 );
 
@@ -74,13 +75,25 @@ class DefaultSelect extends React.Component {
 
 }
 
+MenuList.propTypes = {
+	children: PropTypes.any.isRequired,
+};
+
+CustomOption.propTypes = {
+	children: PropTypes.any.isRequired,
+	innerProps: PropTypes.any.isRequired,
+	isFocused: PropTypes.any.isRequired,
+	isSelected: PropTypes.any.isRequired,
+};
 
 DefaultSelect.defaultProps = {
 	defaultValue: null,
 	options: null,
+	onChange: null,
 };
 DefaultSelect.propTypes = {
 	defaultValue: PropTypes.object,
 	options: PropTypes.array,
+	onChange: PropTypes.func,
 };
 export default DefaultSelect;

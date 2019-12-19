@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
+import Media from 'react-media';
 import CopyButton from '../CopyButton';
 import QrGenerator from '../QrGenerator';
-import Media from 'react-media';
 
 const RequestQr = () => (
 	<section className="request-qr">

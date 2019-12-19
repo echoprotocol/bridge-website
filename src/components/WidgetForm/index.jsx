@@ -69,6 +69,7 @@ export default class WidgetForm extends Component {
 			},
 		],
 	}
+
 	toggleError = () => {
 		this.setState({
 			error: this.state.error ? null : "Account name shouldn't be empty",
