@@ -56,7 +56,7 @@ CopyButton.defaultProps = {
 	withText: false,
 };
 
-CopyButton.propsTypes = {
+CopyButton.propTypes = {
 	value: PropTypes.string.isRequired,
 	color: PropTypes.string,
 	withText: PropTypes.bool,

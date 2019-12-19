@@ -96,4 +96,5 @@ DefaultSelect.propTypes = {
 	options: PropTypes.array,
 	onChange: PropTypes.func,
 };
+
 export default DefaultSelect;

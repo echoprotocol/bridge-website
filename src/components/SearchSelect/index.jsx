@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { Fragment, createRef, useRef } from 'react';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -38,7 +37,7 @@ const scrollByKeyboard = (optionRef, props) => {
 };
 
 const CustomOption = ({
-	children, innerRef, innerProps, data, ...props
+	children, innerProps, data, ...props
 }) => {
 	const optionRef = useRef();
 	scrollByKeyboard(optionRef, props);
@@ -145,6 +144,21 @@ class SearchSelect extends React.Component {
 	}
 
 }
+
+CustomOption.propTypes = {
+	children: PropTypes.any.isRequired,
+	innerProps: PropTypes.any.isRequired,
+	data: PropTypes.any.isRequired,
+};
+
+MenuList.propTypes = {
+	children: PropTypes.any.isRequired,
+};
+
+SingleValue.propTypes = {
+	selectProps: PropTypes.any.isRequired,
+	data: PropTypes.any.isRequired,
+};
 
 SearchSelect.propTypes = {
 	options: PropTypes.oneOfType([
