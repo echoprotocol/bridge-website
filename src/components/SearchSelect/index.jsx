@@ -149,6 +149,9 @@ CustomOption.propTypes = {
 	children: PropTypes.any.isRequired,
 	innerProps: PropTypes.any.isRequired,
 	data: PropTypes.any.isRequired,
+	props: PropTypes.any.isRequired,
+	isFocused: PropTypes.any.isRequired,
+	isSelected: PropTypes.any.isRequired,
 };
 
 MenuList.propTypes = {
