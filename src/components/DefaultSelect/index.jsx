@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import Select, { components } from 'react-select';
 import PropTypes from 'prop-types';
-import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
 import arrow from '../../assets/images/dropdown-arrow.svg';
 
 function MenuList(props) {
