@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
-import '../../../node_modules/react-perfect-scrollbar/dist/css/styles.min.css';
 
 
 function MenuList(props) {
