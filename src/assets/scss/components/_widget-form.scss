@@ -1,0 +1,203 @@
+.widget-form {
+	padding: 38px 63px 93px 66px;
+	margin: 0 auto;
+	width: 70%;
+	background-color: #DFE4E8;
+
+	@include screen-max($xl) {
+		width: 95%;
+		padding: 38px 63px 93px 66px;
+	}
+
+	@include screen-max(1280) {
+		padding: 38px 66px 92px 66px;
+	}
+
+	@include screen-max($lg) {
+		padding: 62px 13% 105px 13.3%;
+		width: 93.5%;
+	}
+
+	@include screen-max($md) {
+		padding: 40px 15% 105px 15%;
+		width: 100%;
+	}
+
+	@include screen-max($md - 1) {
+		padding: 42px 9.5% 52px 9.5%;
+		width: calc(100% + 80px);
+		transform: translateX(-40px);
+	}
+
+	@include screen-max($sm - 1) {
+		padding: 40px 16px 49px;
+		width: calc(100% + 32px);
+		transform: translateX(-16px);
+	}
+}
+
+.widget-form-title {
+	margin-bottom: 8px;
+	@include futura-heavy();
+	font-size: 28px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	text-align: center;
+
+	@include screen-max($xl) {
+		margin-bottom: 10px;
+	}
+
+	@include screen-max($lg) {
+		margin-bottom: 8px;
+		font-size: 24px;
+		line-height: 36px;
+	}
+
+	@include screen-max($md) {
+		margin-bottom: 30px;
+		font-size: 20px;
+		letter-spacing: .8px;
+	}
+
+	@include screen-max($md - 1) {
+		margin-bottom: 13px;
+	}
+
+	@include screen-max($sm - 1) {
+		margin: 0 auto 6px;
+		max-width: 175px;
+		font-size: 24px;
+		line-height: 32px;
+	}
+}
+
+.widget-field-wrap {
+	display: inline-block;
+	position: relative;
+
+	@include screen-max($sm - 1) {
+		margin-bottom: 17px;
+	}
+
+	&:first-of-type {
+		margin-bottom: 10px;
+
+		@include screen-max($lg) {
+			margin-bottom: 15px;
+		}
+
+		@include screen-max($sm - 1) {
+			margin-bottom: 17px;
+		}
+	}
+
+	&.error {
+		.field {
+			background: #fff2f2;
+			border: 1px solid #df6c7f;
+		}
+	}
+
+	&.lg {
+		width: 100%;
+	}
+
+	&.md {
+		width: 66.66%;
+
+		@include screen-max($md) {
+			width: 65%;
+		}
+
+		@include screen-max($md - 1) {
+			width: 60.5%;
+		}
+
+		@include screen-max($sm - 1) {
+			width: 100%;
+		}
+
+		input {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+
+			@include screen-max($sm - 1) {
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+		}
+	}
+
+	.label {
+		font-size: 16px;
+		line-height: 30px;
+		@include futura-medium();
+		display: block;
+
+		@include screen-max($md - 1) {
+			line-height: 30px;
+		}
+
+		@include screen-max($sm - 1) {
+			line-height: 28px;
+		}
+	}
+
+	.field {
+		padding: 12px 22px;
+		width: 100%;
+		@include futura-medium();
+		font-size: 22px;
+		line-height: 30px;
+		background: #fff;
+		border-radius: 8px;
+		outline: none;
+		border: 1px solid #fff;
+		transition: background .3s ease-in, border .3s ease-in;
+
+		@include screen-max($lg) {
+			font-size: 18px;
+			padding: 5px 20px;
+		}
+
+		@include screen-max($sm - 1) {
+			padding: 5px 12px;
+		}
+
+		&:focus {
+			border: 1px solid #a2adb3;
+		}
+
+		@include placeholder() {
+			color: #344148;
+			@include futura-medium();
+			font-size: 22px;
+			line-height: 32px;
+			opacity: .5;
+
+			@include screen-max($lg) {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.error-block {
+		position: absolute;
+		right: 0;
+		bottom: -20px;
+		color: #df6c7f;
+		@include futura-medium();
+		font-size: 16px;
+	}
+}
+
+.widget-form-widget {
+	margin-bottom: 25px;
+}
+
+.widget-button {
+	.btn-primary {
+		width: 100%;
+	}
+}

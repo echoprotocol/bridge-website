@@ -6,6 +6,7 @@ import 'babel-polyfill';
 
 import Routes from './routes'; // Or wherever you keep your reducers
 import './assets/loader';
+import './assets/favicon.ico';
 
 // Create a history of your choosing (we're using a browser history in this case)
 import history from './history';

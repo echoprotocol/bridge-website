@@ -16,19 +16,43 @@ section {
 		width: 100%;
 
 		&:nth-child(2) {
-			min-width: 774px;
+			min-width: 757px;
+
+			@include screen-max(1280) {
+				min-width: auto;
+			}
 		}
 	}
 }
 
-@include screen-max(1480) {
+@include screen-max(1400) {
 	.container {
-		max-width: 1200px;
+		max-width: 1250px;
 	}
 }
 
-@include screen-max(900) {
+@include screen-max(1280) {
 	.container {
-		padding: 0 25px;
+		padding: 0 76px;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+@include screen-max(1000) {
+	.container {
+		padding: 0 56px;
+	}
+}
+
+@include less(768) {
+	.container {
+		padding: 0 40px;
+	}
+}
+
+@include less(500) {
+	.container {
+		padding: 0 16px;
 	}
 }

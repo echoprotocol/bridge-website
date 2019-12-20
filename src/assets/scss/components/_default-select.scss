@@ -1,0 +1,83 @@
+.default-select {
+
+	.select-menu {
+		max-height: 115px;
+	}
+
+	.default-select__control {
+		min-height: 0;
+		border-radius: 5px;
+		border: 1px solid #fff;
+		box-shadow: none;
+		transition: border .3s ease-in;
+		line-height: 30px;
+
+
+		&:hover:not(.default-select__control--is-focused):not(.default-select__control--menu-is-open) {
+			border-color: transparent;
+		}
+
+		&--is-focused {
+			border-color: #a2adb3;
+
+			&:hover {
+				border-color: #a2adb3;
+			}
+		}
+
+		&--menu-is-open {
+			border-color: #a2adb3;
+			border-radius: 5px 5px 0 0;
+
+			&:hover {
+				border-color: #a2adb3;
+			}
+
+			.default-select__indicator {
+				transform: rotate(0);
+			}
+		}
+	}
+
+	.default-select__indicator {
+		transform: rotate(180deg);
+		transition: transform .3s ease-in;
+	}
+
+	.default-select__value-container {
+		padding: 0 5px;
+		height: 100%;
+	}
+
+	.default-select__single-value {
+		margin: 0;
+		position: relative;
+		top: 0;
+		transform: translateY(0);
+	}
+
+	.default-select__indicator-separator {
+		display: none;
+	}
+
+	.default-select__menu {
+		box-shadow: none;
+		margin: 0;
+		border-radius: 0 0 4px 4px;
+		border-left: 1px solid #a2adb3;
+		border-right: 1px solid #a2adb3;
+		border-bottom: 1px solid #a2adb3;
+	}
+
+	.select-field {
+		padding: 0 5px;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&.focus {
+			background-color: #EBEDEE;
+		}
+	}
+}

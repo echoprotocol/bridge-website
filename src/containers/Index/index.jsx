@@ -1,12 +1,12 @@
 import React from 'react';
 
 import About from '../../components/About';
-import Process from '../../components/Process';
-import HowTo from '../../components/HowTo';
 import Example from '../../components/Example';
+import RequestWidget from '../../components/RequestWidget';
+import RequestQr from '../../components/RequestQr';
+import Explaining from '../../components/Explaining';
 import Info from '../../components/Info';
 import Footer from '../../components/Footer';
-
 
 class Index extends React.Component {
 
@@ -15,9 +15,10 @@ class Index extends React.Component {
 		return (
 			<React.Fragment>
 				<About />
-				<Process />
-				<HowTo />
 				<Example />
+				<RequestWidget />
+				<RequestQr />
+				<Explaining />
 				<Info />
 				<Footer />
 			</React.Fragment>
