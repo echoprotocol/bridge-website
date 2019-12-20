@@ -145,11 +145,15 @@ class SearchSelect extends React.Component {
 
 }
 
+CustomOption.defaultProps = {
+	props: null,
+};
+
 CustomOption.propTypes = {
 	children: PropTypes.any.isRequired,
 	innerProps: PropTypes.any.isRequired,
 	data: PropTypes.any.isRequired,
-	props: PropTypes.any.isRequired,
+	props: PropTypes.any,
 	isFocused: PropTypes.any.isRequired,
 	isSelected: PropTypes.any.isRequired,
 };

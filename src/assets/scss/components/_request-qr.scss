@@ -229,6 +229,7 @@
 		color: #344148;
 		font-size: 18px;
 		opacity: .5;
+		user-select: none;
 
 		@include screen-max(1400) {
 			font-size: 14px;
