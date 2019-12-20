@@ -3,7 +3,7 @@ import React from 'react';
 const Explaining = () => (
 	<section className="explaining">
 		<div className="container">
-			<h3 className="title">
+			<h3 className="h3 title">
 				HOW BRIDGE WORKS WITH KEYS AND WHY IT IS SECURE
 			</h3>
 			<p className="text">Bridge stores keys in the browser’s ‘storage.local’.</p>

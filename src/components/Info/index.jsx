@@ -10,7 +10,7 @@ class Info extends React.Component {
 					<div className="row">
 						<div className="col" />
 						<div className="col">
-							<h3 className="info-title">
+							<h3 className="h3 info-title">
 								Learn More About EChO
 							</h3>
 							<p className="info-description">

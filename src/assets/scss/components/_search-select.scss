@@ -4,23 +4,23 @@
 	width: 33.33%;
 	position: relative;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin-bottom: 45px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		margin-bottom: 36px;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		width: 35%;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		width: 39.5%;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		margin-bottom: 42px;
 		width: 100%;
 	}
@@ -31,7 +31,7 @@
 		font-size: 16px;
 		line-height: 28px;
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			display: block;
 		}
 	}
@@ -95,15 +95,15 @@
 		border-left: 1px solid #DFE4E8;
 		transition: background .3s ease-in, border .3s ease-in;
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			padding: 5px 12px;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			padding: 5px 18px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			padding: 5px 12px;
 			border-top-left-radius: 8px;
 			border-bottom-left-radius: 8px;
@@ -127,7 +127,7 @@
 			border-color: #a2adb3;
 			border-bottom-right-radius: 0;
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				border-bottom-left-radius: 0;
 			}
 
@@ -176,7 +176,7 @@
 		font-size: 22px;
 		line-height: 30px;
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			font-size: 18px;
 		}
 
@@ -195,7 +195,7 @@
 		color: #344148;
 		opacity: .5;
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			font-size: 15px;
 		}
 	}
@@ -217,7 +217,7 @@
 		font-size: 22px;
 		line-height: 30px;
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			font-size: 18px;
 		}
 
@@ -251,7 +251,7 @@
 		color: #344148;
 		opacity: .5;
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			font-size: 15px;
 		}
 	}

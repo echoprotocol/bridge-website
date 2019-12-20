@@ -59,50 +59,50 @@ code {
 	@include source();
 }
 
-h3 {
+.h3 {
 	font-size: 36px;
 	line-height: 40px;
 	@include futura-heavy();
 	text-transform: uppercase;
 	letter-spacing: 1.7px;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		font-size: 28px;
 		line-height: 36px;
 		letter-spacing: 1.3px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		line-height: 40px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		font-size: 24px;
 		line-height: 32px;
 		letter-spacing: 1.1px;
 	}
 }
 
-h4 {
+.h4 {
 	font-size: 24px;
 	line-height: 42px;
 	@include futura-medium();
 	letter-spacing: 1.5px;
 }
 
-h5 {
+.h5 {
 	font-size: 24px;
 	line-height: 42px;
 	@include futura-medium();
 	letter-spacing: 1.5px;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		font-size: 20px;
 		line-height: 28px;
 		letter-spacing: 1.2px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		font-size: 18px;
 		line-height: 24px;
 	}

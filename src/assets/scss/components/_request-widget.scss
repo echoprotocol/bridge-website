@@ -2,23 +2,23 @@
 	padding: 116px 0 103px;
 	background-color: #E8ECEF;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		padding: 100px 0 100px;
 	}
 
-	@include screen-max(1280) {
+	@include screen-max($hd) {
 		padding: 69px 0 81px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		padding: 69px 0 79px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		padding: 57px 0 0;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		padding: 39px 0 0;
 	}
 }
@@ -27,15 +27,15 @@
 	width: 80.5%;
 	margin: 0 auto;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		width: 815px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		width: 91%;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		width: 100%;
 	}
 }
@@ -44,16 +44,16 @@
 	margin-bottom: 43px;
 	text-align: center;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin-bottom: 30px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		margin: 0 auto 28px;
 		width: 95%;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		margin: 0 auto 15px;
 		width: 100%;
 	}
@@ -66,32 +66,32 @@
 	letter-spacing: 1.5px;
 	@include futura-medium();
 
-	@include screen-max(1600) {
+	@include screen-max($xxl) {
 		letter-spacing: 1.47px;
 	}
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin-bottom: 45px;
 		font-size: 18px;
 		line-height: 32px;
 		letter-spacing: 1.1px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		margin-bottom: 48px;
 		letter-spacing: 1.05px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		margin-bottom: 64px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		font-size: 16px;
 		line-height: 24px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		margin-bottom: 48px;
 	}
 }

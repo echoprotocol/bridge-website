@@ -75,7 +75,7 @@ export default class QrGenerator extends Component {
 					</div>
 				</div>
 				<div className="qr-generator-result">
-					<h4 className="title">Result</h4>
+					<h4 className="h4 title">Result</h4>
 					<CopyField
 						value={`https://echo-bridge.io/receive/${account}/${currency}/${id}/${amount}/qr-code.png`}
 						iconColor="#ABB2B4"

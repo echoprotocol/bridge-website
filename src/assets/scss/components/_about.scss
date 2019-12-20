@@ -5,31 +5,31 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	@include screen-max(1600) {
+	@include screen-max($xxl) {
 		padding: 204px 0 148px;
 	}
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		padding: 195px 0 53px;
 	}
 
-	@include screen-max(1280) {
+	@include screen-max($hd) {
 		padding: 181px 0 67px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		padding: 181px 0 124px;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		padding: 187px 0 192px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		padding: 113px 0 112px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		padding: 45px 0 37px;
 	}
 
@@ -37,11 +37,11 @@
 		width: 100%;
 		max-width: 458px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			max-width: 322px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			max-width: 240px;
 		}
 	}
@@ -51,7 +51,7 @@
 	position: relative;
 	display: flex;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		justify-content: space-between;
 	}
 
@@ -61,26 +61,26 @@
 		&:nth-child(1) {
 			min-width: 760px;
 
-			@include screen-max(1600) {
+			@include screen-max($xxl) {
 				min-width: 0;
 			}
 
-			@include screen-max(1400) {
+			@include screen-max($xl) {
 				min-width: 635px;
 			}
 
-			@include screen-max(1280) {
+			@include screen-max($hd) {
 				width: 530px;
 				min-width: 530px;
 			}
 
-			@include screen-max(1000) {
+			@include screen-max($lg) {
 				padding-right: 10px;
 				width: 495px;
 				min-width: 495px;
 			}
 
-			@include screen-max(768) {
+			@include screen-max($md) {
 				padding-right: 0;
 				min-width: auto;
 				width: 100%;
@@ -94,11 +94,11 @@
 				display: flex;
 			}
 
-			@include screen-max(1280) {
+			@include screen-max($hd) {
 				justify-content: flex-end;
 			}
 
-			@include screen-max(768) {
+			@include screen-max($md) {
 				display: none;
 			}
 		}
@@ -116,21 +116,21 @@
 			padding: 0 0 0 80px;
 		}
 
-		@include screen-max(1600) {
+		@include screen-max($xxl) {
 			transform: translate(34px, -22px);
 		}
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			padding: 0 0 0 105px;
 			transform: translate(0, -70px);
 		}
 
-		@include screen-max(1280) {
+		@include screen-max($hd) {
 			padding: 0;
 			transform: translateY(-55px);
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			transform: translateY(-27px);
 		}
 
@@ -148,11 +148,11 @@
 	flex-wrap: wrap;
 	display: flex;
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		justify-content: space-between;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -161,19 +161,19 @@
 		&:not(:last-child) {
 			margin-right: 30px;
 
-			@include screen-max(1400) {
+			@include screen-max($xl) {
 				margin-right: 23px;
 			}
 
-			@include screen-max(1000) {
+			@include screen-max($lg) {
 				margin-right: 10px;
 			}
 
-			@include less(768) {
+			@include screen-max($md - 1) {
 				margin-right: 0;
 			}
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				margin-bottom: 16px;
 			}
 		}
@@ -188,21 +188,21 @@
 	letter-spacing: 4.9px;
 	text-transform: uppercase;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		font-size: 15px;
 		padding: 11px 0 0;
 		letter-spacing: 3.5px;
 	}
 
-	@include screen-max(900) {
+	@include screen-max($lg - 1) {
 		line-height: 32px;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		padding: 4px 0 0;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		padding: 0;
 		font-size: 12px;
 		letter-spacing: 2.15px;
@@ -214,27 +214,27 @@
 	max-width: 760px;
 	padding: 20px 0 48px;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		padding: 20px 0 23px;
 	}
 
-	@include screen-max(1280) {
+	@include screen-max($hd) {
 		padding: 20px 0 40px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		padding: 20px 20px 28px 0;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		padding: 20px 0 28px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		padding: 20px 0 47px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		padding: 17px 0 16px;
 	}
 
@@ -246,14 +246,14 @@
 		letter-spacing: 1.44px;
 		line-height: 43px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			margin: 16px 0;
 			font-size: 18px;
 			line-height: 32px;
 			letter-spacing: 1.1px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			font-size: 16px;
 			line-height: 24px;
 			letter-spacing: .95px;
@@ -262,23 +262,23 @@
 		&:nth-child(1) {
 			margin: 24px 0 0;
 
-			@include screen-max(1400) {
+			@include screen-max($xl) {
 				margin: 20px 0 0;
 			}
 
-			@include screen-max(1280) {
+			@include screen-max($hd) {
 				margin: 33px 0 0;
 			}
 
-			@include screen-max(768) {
+			@include screen-max($md) {
 				margin: 26px 0 0;
 			}
 
-			@include less(768) {
+			@include screen-max($md - 1) {
 				margin: 15px 0 0;
 			}
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				margin: 0;
 			}
 		}

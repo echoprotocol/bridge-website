@@ -78,7 +78,7 @@ export default class WidgetForm extends Component {
 	render() {
 		return (
 			<form className="widget-form">
-				<h4 className="widget-form-title">Fill The Form To Get Widget</h4>
+				<h4 className="h4 widget-form-title">Fill The Form To Get Widget</h4>
 
 				<WidgetFormField
 					id="widget-form-account"

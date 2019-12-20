@@ -11,12 +11,12 @@
 	cursor: pointer;
 	transition: background-color 0.2s ease;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		min-width: 180px;
 		height: 42px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		height: 46px;
 		min-width: 260px;
 	}
@@ -25,7 +25,7 @@
 		font-size: 22px;
 		@include futura-demi();
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			font-size: 18px;
 		}
 
@@ -36,17 +36,17 @@
 		height: 24px;
 		margin-right: 12px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			min-width: 19.5px;
 			height: 19.5px;
 			margin-right: 8px;
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			margin-right: 5px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			min-width: 24px;
 			height: 24px;
 			margin-right: 10px;
@@ -81,7 +81,7 @@
 	&.lg {
 		height: 54px;
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			margin: 0 auto;
 			max-width: 260px;
 			height: 46px;
@@ -91,11 +91,11 @@
 			font-size: 22px;
 			letter-spacing: 1px;
 
-			@include screen-max(1000) {
+			@include screen-max($lg) {
 				letter-spacing: 0;
 			}
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				font-size: 18px;
 				line-height: 24px;
 				letter-spacing: .5px;
@@ -111,21 +111,21 @@
 	padding: 0 20px 0 16px;
 	background-color: rgba(#fff, 0.5);
 
-	&.iconed {
+	&.with-icon {
 		min-width: 301px;
 		justify-content: flex-start;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			min-width: auto;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			justify-content: center;
 			width: 260px;
 		}
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		padding: 0 15px 0 15px;
 	}
 
@@ -145,19 +145,19 @@
 		letter-spacing: .5px;
 		color: rgba(#394a4c, 0.7);
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			letter-spacing: .3px;
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			letter-spacing: .4px;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			font-size: 15px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			font-size: 18px;
 			line-height: 36px;
 		}

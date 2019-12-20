@@ -6,12 +6,12 @@ import QrGenerator from '../QrGenerator';
 const RequestQr = () => (
 	<section className="request-qr">
 		<div className="container">
-			<h3 className="request-qr-title">GENERATE PAYMENT REQUEST QR CODE</h3>
+			<h3 className="h3 request-qr-title">GENERATE PAYMENT REQUEST QR CODE</h3>
 			<div className="qr-generator-wrap">
 				<QrGenerator />
 			</div>
 			<div className="request-qr-field">
-				<h5 className="title">
+				<h5 className="h5 title">
 					You can use the following URL to generate a payment request QR code:
 				</h5>
 
@@ -119,7 +119,7 @@ const RequestQr = () => (
 				</Media>
 			</div>
 			<div className="request-qr-description">
-				<h4 className="title">Parameter description</h4>
+				<h4 className="h4 title">Parameter description</h4>
 				<div className="description-item">
 					<div className="description-item-parameter">
 						<span>1.</span>

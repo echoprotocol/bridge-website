@@ -8,7 +8,7 @@ export default class RequestWidget extends Component {
 			<section className="request-widget">
 				<div className="container">
 					<div className="request-widget-wrap">
-						<h3 className="request-widget-title">
+						<h3 className="h3 request-widget-title">
 							GENERATE PAYMENT REQUEST WIDGET
 						</h3>
 						<p className="request-widget-info">A payment request widget is an easy and convenient way to request payment. The user who jumps to the URL sees a widget with all the information needed to make the transaction: a QR code, bridge payment button, the name of the receiver account, the amount of funds and currency type.</p>

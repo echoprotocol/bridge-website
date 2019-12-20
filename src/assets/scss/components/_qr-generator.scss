@@ -2,19 +2,19 @@
 	padding: 39px 25px 102px 50px;
 	background-color: #DFE4E8;
 
-	@include screen-max(1280) {
+	@include screen-max($hd) {
 		padding: 40px 25px 101px 50px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		padding: 39px 40px 50px 40px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		padding: 40px 20px 50px 20px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		padding: 27px 8px 50px 8px;
 	}
 }
@@ -22,21 +22,21 @@
 .qr-generator-wrap {
 	margin-bottom: 64px;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin-bottom: 71px;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		margin-bottom: 69px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		margin-bottom: 40px;
 		width: calc(100% + 40px);
 		transform: translateX(-20px);
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		margin-bottom: 23px;
 		width: calc(100% + 16px);
 		transform: translateX(-8px);
@@ -46,15 +46,15 @@
 .qr-generator-form {
 	margin-bottom: 38px;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin-bottom: 36px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		margin-bottom: 33px;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		margin-bottom: 26px;
 	}
 
@@ -65,15 +65,15 @@
 		line-height: 42px;
 		letter-spacing: 1.2px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			margin-bottom: 24px;
 		}
 
-		@include screen-max(1280) {
+		@include screen-max($hd) {
 			margin-bottom: 22px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			margin-bottom: 16px;
 			font-size: 24px;
 			line-height: 32px;
@@ -86,27 +86,27 @@
 		font-size: 15px;
 		line-height: 32px;
 
-		@include screen-max(1600) {
+		@include screen-max($xxl) {
 			margin-bottom: 5px;
 		}
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			margin-bottom: 6px;
 			font-size: 13px;
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			margin-bottom: 7px;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			margin-bottom: 18px;
 			line-height: 30px;
 		}
 	}
 
 	.static-field:first-child {
-		@include less(768) {
+		@include screen-max($md - 1) {
 			display: inline-block;
 			width: 100%;
 		}
@@ -115,7 +115,7 @@
 	.static-field:not(:first-child) {
 		margin: 0 5px;
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			margin: 0 4px;
 		}
 	}
@@ -131,7 +131,7 @@
 		border: 1px solid #fff;
 		transition: border .3s ease-in;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			font-size: 13px;
 		}
 
@@ -139,12 +139,12 @@
 			margin-bottom: 10px;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			margin-bottom: 0;
 			margin-top: 10px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			margin-top: 19px;
 		}
 
@@ -155,11 +155,11 @@
 		&.account {
 			width: 10.8%;
 
-			@include screen-max(1400) {
+			@include screen-max($xl) {
 				width: 100px;
 			}
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				margin-top: 8px;
 				width: calc(100% - 16px);
 			}
@@ -168,15 +168,15 @@
 		&.id {
 			width: 22%;
 
-			@include screen-max(1400) {
+			@include screen-max($xl) {
 				width: 200px;
 			}
 
-			@include less(768) {
+			@include screen-max($md - 1) {
 				width: 172px;
 			}
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				width: calc(50% - 16px);
 			}
 		}
@@ -184,11 +184,11 @@
 		&.amount {
 			width: 22%;
 
-			@include screen-max(1400) {
+			@include screen-max($xl) {
 				width: 200px;
 			}
 
-			@include less(500) {
+			@include screen-max($sm - 1) {
 				width: calc(50% - 16px);
 			}
 		}
@@ -199,15 +199,15 @@
 		width: 9.5%;
 		height: 32px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			width: 100px;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			margin-top: 10px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			margin-top: 19px;
 			width: calc(50% - 16px);
 		}
@@ -221,7 +221,7 @@
 		opacity: .5;
 		letter-spacing: .3px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			font-size: 15px;
 		}
 	}
@@ -231,11 +231,11 @@
 	.title {
 		margin-bottom: 3px;
 
-		@include screen-max(1600) {
+		@include screen-max($xxl) {
 			margin-bottom: 0;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			margin-bottom: 2px;
 		}
 	}
@@ -243,11 +243,11 @@
 	.copy-field {
 		width: 82.15%;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			max-width: 800px;
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			width: 100%;
 		}
 	}

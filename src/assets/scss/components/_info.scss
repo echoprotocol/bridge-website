@@ -6,76 +6,76 @@
 	background-repeat: no-repeat;
 	background-position: 30.2% 52%;
 
-	@include screen-max(1600) {
+	@include screen-max($xxl) {
 		background-position: 5% 52%;
 	}
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		background-position: 0% 52%;
 		padding: 103px 0 106px;
 	}
 
-	@include screen-max(1000) {
+	@include screen-max($lg) {
 		padding: 103px 0 107px;
 		background-size: 58%;
 	}
 
-	@include screen-max(768) {
+	@include screen-max($md) {
 		background-size: 70%;
 		background-position: -100% 52%;
 	}
 
-	@include less(768) {
+	@include screen-max($md - 1) {
 		padding: 106px 0 88px;
 		background-size: 81%;
 		background-position: -170px 100px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		padding: 46px 0;
 	}
 
 	.col:first-child {
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			width: 52%;
 		}
 
-		@include screen-max(1280) {
+		@include screen-max($hd) {
 			width: 42%;
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			width: 42.5%;
 		}
 
-		@include screen-max(768) {
+		@include screen-max($md) {
 			width: 31%;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			display: none;
 		}
 	}
 
 	.col:nth-child(2) {
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			width: 48%;
 			min-width: auto;
 		}
 
-		@include screen-max(1280) {
+		@include screen-max($hd) {
 			width: 58%;
 		}
 
-		@include screen-max(1000) {
+		@include screen-max($lg) {
 			width: 57.5%;
 		}
 
-		@include screen-max(768) {
+		@include screen-max($md) {
 			width: 69%;
 		}
 
-		@include less(768) {
+		@include screen-max($md - 1) {
 			width: 100%;
 		}
 	}
@@ -83,11 +83,11 @@
 	.btn-light {
 		min-width: 200px;
 
-		@include screen-max(1400) {
+		@include screen-max($xl) {
 			min-width: 160px;
 		}
 
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			min-width: 260px;
 			margin: 0 auto;
 		}
@@ -102,12 +102,12 @@
 	letter-spacing: 5px;
 	text-transform: uppercase;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin-bottom: 20px;
 		letter-spacing: 4.8px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		margin-bottom: 17px;
 		font-size: 16px;
 		line-height: 22px;
@@ -124,14 +124,14 @@
 	letter-spacing: 1.44px;
 	line-height: 43px;
 
-	@include screen-max(1400) {
+	@include screen-max($xl) {
 		margin: 0 0 41px 0;
 		font-size: 20px;
 		line-height: 36px;
 		letter-spacing: 1.2px;
 	}
 
-	@include less(500) {
+	@include screen-max($sm - 1) {
 		margin-bottom: 40px;
 		font-size: 16px;
 		line-height: 24px;
