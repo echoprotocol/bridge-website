@@ -62,7 +62,7 @@
 	bottom: 2px;
 	height: 6px;
 	border-radius: 6px;
-	background-color: #aaa;
+	background-color: rgba(255, 255, 255, 0.1);
 	-webkit-transition: background-color 0.2s linear, height 0.2s ease-in-out;
 	transition: background-color 0.2s linear, height 0.2s ease-in-out;
 }
@@ -81,8 +81,8 @@
 .ps__rail-x:hover>.ps__thumb-x,
 .ps__rail-x:focus>.ps__thumb-x,
 .ps__rail-x.ps--clicking .ps__thumb-x {
-	height: 11px;
-	background-color: #999;
+	height: 8px;
+	background-color: rgba(#fff, 0.5);
 }
 
 .ps__rail-y:hover>.ps__thumb-y,

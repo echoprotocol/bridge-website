@@ -17,9 +17,3 @@ $xs: 320;
 		@content;
 	}
 }
-
-@mixin less($width) {
-	@media (max-width: $width - 1 + 'px') {
-		@content;
-	}
-}

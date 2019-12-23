@@ -59,7 +59,7 @@ footer {
 	}
 
 	span:nth-child(2) {
-		@include less(500) {
+		@include screen-max($sm - 1) {
 			display: none;
 		}
 	}

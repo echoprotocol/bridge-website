@@ -45,13 +45,13 @@ section {
 	}
 }
 
-@include less(768) {
+@include screen-max($md - 1) {
 	.container {
 		padding: 0 40px;
 	}
 }
 
-@include less(500) {
+@include screen-max($sm - 1) {
 	.container {
 		padding: 0 16px;
 	}

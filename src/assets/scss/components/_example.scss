@@ -27,7 +27,7 @@
 			justify-content: space-between;
 		}
 
-		@include screen-max(1152) {
+		@include screen-max($hd - 1) {
 			width: 85.7%;
 			flex-wrap: wrap;
 		}
@@ -54,7 +54,7 @@
 			padding: 51px 10px 0 0;
 		}
 
-		@include screen-max(1152) {
+		@include screen-max($hd - 1) {
 			width: 100%;
 			margin-bottom: 73px;
 			padding: 0;
@@ -75,7 +75,7 @@
 			width: 564px;
 		}
 
-		@include screen-max(1152) {
+		@include screen-max($hd - 1) {
 			width: 100%;
 		}
 
@@ -88,6 +88,7 @@
 .example-code-scroll {
 	position: relative;
 	height: 320px;
+	background-color: #2b2b2b;
 }
 
 .example-info {
