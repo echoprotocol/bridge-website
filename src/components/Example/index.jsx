@@ -34,94 +34,46 @@ class Example extends React.Component {
 							>
 								<Highlight className="javascript">
 									{
-										`
-window.onload = () => {
-
-
+										`window.onload = () => {
   if (echojslib && echojslib.isEchoBridge) {
-
-
     /**
-
     * Subscribe to current Echo network selected in Bridge
-
     */
-
     echojslib.extension.subscribeSwitchNetwork(async () => {
-
-
       if (echojslib.echo.isConnected) {
-
         await window.echojslib.echo.disconnect();
-
       }
-
-
       /**
-
       * Connect to current Echo network selected in Bridge
-
       */
-
       await echojslib.echo.connect();
-
       /**
-
       * Create a transaction
-
       * @type {Transaction}
-
       */
-
       const transaction = echojslib.echo.createTransaction();
-
-
       /**
-
       * Add transfer operation
-
       */
-
-      transaction.addOperation(echojslib.constants.OPERATIONS_IDS.TRANSFER,  {
-
+      transaction.addOperation(echojslib.constants.OPERATIONS_IDS.TRANSFER, {
         from:  "1.2.1",
-
         to:  "1.2.2",
-
         amount:  {
-
           asset_id: "1.3.0",
-
           amount:  10
-
         }
-
       });
-
-
       /**
-
       * Sign the transaction with Bridge
-
       */
-
       await transaction.signWithBridge();
-
-
       /**
-
       * Broadcast the transaction to blockchain
-
       */
-
       await transaction.broadcast();
-
     });
-
   }
-
-};
-									`
+};`
 									}
 								</Highlight>
 							</PerfectScrollbar>

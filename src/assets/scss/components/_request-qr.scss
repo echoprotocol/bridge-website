@@ -34,7 +34,7 @@
 		margin-bottom: 63px;
 	}
 
-	@include less (768) {
+	@include screen-max($md - 1) {
 		margin-bottom: 31px;
 		max-width: 95%;
 	}
