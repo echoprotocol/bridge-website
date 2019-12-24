@@ -17,16 +17,22 @@ class Footer extends React.Component {
 								:
 								<ul>
 									<li>
-										<a href=""><img src={chrome} alt="" /></a>
+										<a
+											href="https://chrome.google.com/webstore/detail/echo-bridge/ginklfodpcgldnicehmlpehfmgjhbdcl"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<img src={chrome} alt="" />
+										</a>
 									</li>
-									<li>
+									{/* <li>
 										<a href=""><img src={firefox} alt="" /></a>
-									</li>
+									</li> */}
 								</ul>
 							</div>
 						</div>
 						<div className="col">
-							<span className="copyright">© Copyright 2018</span>
+							<span className="copyright">© Copyright 2019</span>
 						</div>
 					</div>
 				</div>

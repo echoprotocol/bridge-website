@@ -130,10 +130,10 @@
 	}
 
 	.label {
+		display: inline-block;
 		font-size: 16px;
 		line-height: 30px;
 		@include futura-medium();
-		display: block;
 
 		@include screen-max($md - 1) {
 			line-height: 30px;
@@ -197,7 +197,7 @@
 }
 
 .widget-button {
-	.btn-primary {
-		width: 100%;
+	@include screen-max($sm - 1) {
+		text-align: center;
 	}
 }

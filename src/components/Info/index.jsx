@@ -17,9 +17,9 @@ class Info extends React.Component {
 								Echo is a generalized smart contract protocol that enables
 								efficient decentralized computing.
 							</p>
-							<button className="btn-light">
+							<a href="https://dev.echo.org/" className="btn-light" target="_blank" rel="noopener noreferrer">
 								<span className="text">Visit Website</span>
-							</button>
+							</a>
 						</div>
 					</div>
 				</div>

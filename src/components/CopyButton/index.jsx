@@ -29,7 +29,7 @@ class CopyButton extends Component {
 		const { value, color, withText } = this.props;
 		return (
 			<CopyToClipboard onCopy={this.onCopy} text={value} >
-				<span className="copy-field-icon">
+				<button className="copy-field-button">
 					<CSSTransition
 						in={this.state.isCopied}
 						timeout={300}
@@ -44,7 +44,7 @@ class CopyButton extends Component {
 						withText &&
 						<span className="copy-field-text" style={{ color }}> Copy link </span>
 					}
-				</span>
+				</button>
 			</CopyToClipboard>
 		);
 	}
