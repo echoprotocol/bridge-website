@@ -12,6 +12,11 @@
 		transition: border .3s ease-in;
 		line-height: 30px;
 
+		&:hover {
+			@include onlyHover() {
+				cursor: pointer;
+			}
+		}
 
 		&:hover:not(.default-select__control--is-focused):not(.default-select__control--menu-is-open) {
 			border-color: transparent;
@@ -71,13 +76,21 @@
 
 	.select-field {
 		padding: 0 5px;
+		border: 1px solid transparent;
 
 		&:hover {
 			cursor: pointer;
 		}
 
 		&.focus {
-			background-color: #EBEDEE;
+			background-color: rgba(162, 173, 179, .2);
+		}
+
+		&.selected {
+			padding: 0 2px;
+			margin: 3px;
+			border: 1px solid rgba(162, 173, 179, .2);
+			background-color: rgba(162, 173, 179, .1);
 		}
 	}
 }

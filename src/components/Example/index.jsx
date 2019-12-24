@@ -22,9 +22,9 @@ class Example extends React.Component {
 									<img src={git} alt="" className="logo" />
 									<span>We are on Github</span>
 								</div>
-								<button className="btn-primary">
+								<a href="https://github.com/echoprotocol/bridge-extension" className="btn-primary" target="_blank" rel="noopener noreferrer">
 									<span className="text">Get Started</span>
-								</button>
+								</a>
 							</div>
 						</div>
 						<div className="col" >

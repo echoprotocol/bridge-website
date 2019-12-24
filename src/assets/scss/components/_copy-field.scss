@@ -20,13 +20,15 @@
 	}
 }
 
-.copy-field-icon {
-	top: -3px;
+.copy-field-button {
 	position: relative;
+	top: -3px;
 	display: flex;
 	align-items: center;
 	font-size: 24px;
+	background-color: transparent;
 	opacity: .7;
+	border: none;
 
 	@include screen-max($md) {
 		top: 0;

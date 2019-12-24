@@ -1,6 +1,5 @@
 import React from 'react';
 import chrome from '../../assets/images/chrome.svg';
-import firefox from '../../assets/images/firefox.svg';
 import bidge from '../../assets/images/logo.svg';
 import brgScreens from '../../assets/images/brg-screens.png';
 import brgScreens1600 from '../../assets/images/brg-screens-1600.png';
@@ -31,18 +30,18 @@ class About extends React.Component {
 								</p>
 							</div>
 							<div className="about-buttons">
-								<button className="btn-light with-icon">
+								<a href="https://chrome.google.com/webstore/detail/echo-bridge/ginklfodpcgldnicehmlpehfmgjhbdcl" className="btn-light with-icon" target="_blank" rel="noopener noreferrer">
 									<span className="icon">
 										<img src={chrome} alt="chrome" />
 									</span>
 									<span className="text">Get Chrome Extension</span>
-								</button>
-								<button className="btn-light with-icon">
+								</a>
+								{/* <button className="btn-light with-icon">
 									<span className="icon">
 										<img src={firefox} alt="firefox" />
 									</span>
 									<span className="text">Get Firefox Extension</span>
-								</button>
+								</button> */}
 							</div>
 						</div>
 						<div className="column" >

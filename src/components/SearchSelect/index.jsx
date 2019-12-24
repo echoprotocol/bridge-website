@@ -124,7 +124,6 @@ class SearchSelect extends React.Component {
 					ref={selectRef}
 					onKeyDown={() => this.onKeyDown(selectRef)}
 					onBlur={() => this.onBlur(selectRef)}
-					isClearable
 					classNamePrefix="search-select"
 					options={options}
 					components={{
