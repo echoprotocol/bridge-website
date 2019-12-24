@@ -4,6 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const { API_URL } = require('config');
 
@@ -91,6 +93,7 @@ module.exports = {
 				},
 			},
 		},
+		minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
 	},
 	resolve: {
 		modules: [
