@@ -1,6 +1,5 @@
 import React from 'react';
 import chrome from '../../assets/images/chrome.svg';
-import firefox from '../../assets/images/firefox.svg';
 
 class Footer extends React.Component {
 

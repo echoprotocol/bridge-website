@@ -1,6 +1,5 @@
 import React from 'react';
 import chrome from '../../assets/images/chrome.svg';
-import firefox from '../../assets/images/firefox.svg';
 import bidge from '../../assets/images/logo.svg';
 import brgScreens from '../../assets/images/brg-screens.png';
 import brgScreens1600 from '../../assets/images/brg-screens-1600.png';
