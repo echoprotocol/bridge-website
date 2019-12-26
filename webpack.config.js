@@ -62,7 +62,12 @@ module.exports = {
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/,
-				loader: 'url-loader?limit=100000',
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+					},
+				},
 			},
 			{
 				test: /\.css$/,
