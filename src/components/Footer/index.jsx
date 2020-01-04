@@ -31,7 +31,7 @@ class Footer extends React.Component {
 							</div>
 						</div>
 						<div className="col">
-							<span className="copyright">© Copyright 2019</span>
+							<span className="copyright">© Copyright 2020</span>
 						</div>
 					</div>
 				</div>

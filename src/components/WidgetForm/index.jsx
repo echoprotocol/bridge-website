@@ -14,7 +14,7 @@ export default class WidgetForm extends Component {
 				options: [
 					{
 						label: 'ECHO',
-						id: '1.3.8',
+						id: '1.3.0',
 					},
 					{
 						label: 'BST',
@@ -43,7 +43,7 @@ export default class WidgetForm extends Component {
 				options: [
 					{
 						label: 'ECHO',
-						id: '1.3.8',
+						id: '1.3.0',
 					},
 					{
 						label: 'PST',
