@@ -53,7 +53,7 @@ export default class QrGenerator extends Component {
 					</div>
 					<div className="fields">
 						<span className="static-field">
-							https://echo-bridge.io/receive/
+							https://bridge.echo.org/receive/
 						</span>
 						<input type="text" className="dynamic-field account" value={account} onChange={this.onAccountChange} />
 						<span className="static-field">/</span>
@@ -68,7 +68,7 @@ export default class QrGenerator extends Component {
 						<input type="text" className="dynamic-field id" value={id} onChange={this.onIdChange} />
 						<span className="static-field">/</span>
 						<input type="text" className="dynamic-field amount" value={amount} onChange={this.onAmountChange} />
-						<span className="static-field">/qr-code.png</span>
+						<span className="static-field">/widget</span>
 					</div>
 					<div className="info">
 						You can replace optional fields with &quot;-&quot;
@@ -77,7 +77,7 @@ export default class QrGenerator extends Component {
 				<div className="qr-generator-result">
 					<h4 className="h4 title">Result</h4>
 					<CopyField
-						value={`https://echo-bridge.io/receive/${account}/${currency}/${id}/${amount}/qr-code.png`}
+						value={`https://bridge.echo.org/receive/${account}/${currency}-${id}/${amount}/widget`}
 						iconColor="#ABB2B4"
 						textColor="#4C8BF5"
 						backgroundColor="#fff"
