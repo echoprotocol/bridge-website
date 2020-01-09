@@ -29,7 +29,7 @@ class CopyButton extends Component {
 		const { value, color, withText } = this.props;
 		return (
 			<CopyToClipboard onCopy={this.onCopy} text={value} >
-				<button className="copy-field-button">
+				<button className="copy-field-button" type="button">
 					<CSSTransition
 						in={this.state.isCopied}
 						timeout={300}

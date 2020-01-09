@@ -96,6 +96,10 @@
 		.field {
 			background: #fff2f2;
 			border: 1px solid #df6c7f;
+
+			&:focus {
+				border: 1px solid #df6c7f;
+			}
 		}
 	}
 
