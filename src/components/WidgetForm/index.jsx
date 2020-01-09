@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import WidgetFormField from '../WidgetFormField';
 import SearchSelect from '../SearchSelect';
 import CopyField from '../CopyField';
-
+import { isAccountNameError, isAmountError } from '../../helpers/ValidateHelper';
 
 export default class WidgetForm extends Component {
 
 	state = {
 		generatedWidget: '',
+		account: {
+			value: '',
+			error: '',
+		},
+		amount: {
+			value: '',
+			error: '',
+		},
 		options: [
 			{
 				label: 'Tokens',
@@ -19,18 +27,6 @@ export default class WidgetForm extends Component {
 					{
 						label: 'BST',
 						id: '1.3.5',
-					},
-					{
-						label: 'BUS',
-						id: '1.4.8',
-					},
-					{
-						label: 'BUZ',
-						id: '1.2.4',
-					},
-					{
-						label: 'FIZ',
-						id: '5.2.1',
 					},
 				].map((option) => ({
 					value: option.label,
@@ -49,18 +45,6 @@ export default class WidgetForm extends Component {
 						label: 'PST',
 						id: '1.3.5',
 					},
-					{
-						label: 'BLS',
-						id: '1.4.8',
-					},
-					{
-						label: 'BUZ',
-						id: '1.2.4',
-					},
-					{
-						label: 'FIZ',
-						id: '5.2.1',
-					},
 				].map((option) => ({
 					value: option.label,
 					label: option.label,
@@ -68,16 +52,87 @@ export default class WidgetForm extends Component {
 				})),
 			},
 		],
+		selectedOptionId: '1.3.0',
 	}
 
-	toggleError = () => {
+	onAccountChange = (e) => {
+		e.preventDefault();
 		this.setState({
-			error: this.state.error ? null : "Account name shouldn't be empty",
+			account: {
+				...this.state.account,
+				value: e.target.value,
+			},
 		});
 	}
+
+	onAmountChange = (e) => {
+		e.preventDefault();
+		const { value } = e.target;
+		const isError = isAmountError(value);
+		if (isError) {
+			this.setState({
+				amount: {
+					...this.state.amount,
+					error: isError,
+				},
+			});
+		} else {
+			this.setState({
+				amount: {
+					error: false,
+					value,
+				},
+			});
+		}
+	}
+
+	onSelectChange=(optionSelected) => {
+		this.setState({
+			selectedOptionId: optionSelected.id,
+		});
+	}
+
+	removeAcountError = () => {
+		this.setState({
+			account: {
+				...this.state.account,
+				error: false,
+			},
+		});
+	}
+
+	removeAmountError = () => {
+		this.setState({
+			amount: {
+				...this.state.amount,
+				error: false,
+			},
+		});
+	}
+
+	submitForm = (e) => {
+		e.preventDefault();
+		const accountFailed = isAccountNameError(this.state.account.value);
+		if (accountFailed) {
+			this.setState({
+				account: {
+					...this.state.account,
+					error: accountFailed,
+				},
+			});
+		} else {
+			const { account: { value: accountValue }, amount: { value: amountValue }, selectedOptionId } = this.state;
+			this.setState({
+				generatedWidget: `https://bridge.echo.org/receive/${accountValue}/assets-${selectedOptionId}/${amountValue || null}/widget`,
+			});
+		}
+	}
+
+
 	render() {
+		const { account: { value: accountValue, error: accountError }, amount: { value: amountValue, error: amountError } } = this.state;
 		return (
-			<form className="widget-form">
+			<form className="widget-form" onSubmit={(e) => this.submitForm(e)}>
 				<h4 className="h4 widget-form-title">Fill The Form To Get Widget</h4>
 
 				<WidgetFormField
@@ -85,7 +140,10 @@ export default class WidgetForm extends Component {
 					label="Account"
 					placeholder="Account"
 					className="lg"
-					error={null}
+					error={accountError}
+					value={accountValue}
+					onChange={this.onAccountChange}
+					onFocus={this.removeAcountError}
 				/>
 
 				<WidgetFormField
@@ -93,10 +151,13 @@ export default class WidgetForm extends Component {
 					label="Amount"
 					placeholder="0"
 					className="md"
-					error={null}
+					error={amountError}
+					value={amountValue}
+					onChange={this.onAmountChange}
+					onBlur={this.removeAmountError}
 				/>
 				<div className="search-select-wrap">
-					<SearchSelect classNameWrap="search-select-wrap" options={this.state.options} />
+					<SearchSelect options={this.state.options} onChange={this.onSelectChange} isDisabled />
 				</div>
 				{
 					this.state.generatedWidget &&
@@ -105,7 +166,7 @@ export default class WidgetForm extends Component {
 					</div>
 				}
 				<div className="widget-button">
-					<button className="btn-primary lg">
+					<button className="btn-primary lg" type="submit">
 						<span className="text">Generate Widget</span>
 					</button>
 				</div>

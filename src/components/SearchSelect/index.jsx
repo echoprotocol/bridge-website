@@ -116,7 +116,7 @@ class SearchSelect extends React.Component {
 
 	render() {
 		const selectRef = createRef();
-		const { options } = this.props;
+		const { options, onChange } = this.props;
 		return (
 			<Fragment>
 				<label htmlFor="react-select-2-input" className="label"> Currency </label>
@@ -124,6 +124,7 @@ class SearchSelect extends React.Component {
 					ref={selectRef}
 					onKeyDown={() => this.onKeyDown(selectRef)}
 					onBlur={() => this.onBlur(selectRef)}
+					onChange={onChange}
 					classNamePrefix="search-select"
 					options={options}
 					components={{
@@ -132,6 +133,7 @@ class SearchSelect extends React.Component {
 						Option: CustomOption,
 						DropdownIndicator: null,
 					}}
+					isDisabled={this.props.isDisabled}
 					placeholder="Select item"
 					className="search-select"
 					defaultValue={options[0].options[0]}
@@ -145,6 +147,7 @@ class SearchSelect extends React.Component {
 
 CustomOption.defaultProps = {
 	props: null,
+	onChange: () => {},
 };
 
 CustomOption.propTypes = {
@@ -154,6 +157,7 @@ CustomOption.propTypes = {
 	props: PropTypes.any,
 	isFocused: PropTypes.any.isRequired,
 	isSelected: PropTypes.any.isRequired,
+	onChange: PropTypes.func,
 };
 
 MenuList.propTypes = {
@@ -164,12 +168,17 @@ SingleValue.propTypes = {
 	selectProps: PropTypes.any.isRequired,
 	data: PropTypes.any.isRequired,
 };
-
+SearchSelect.defaultProps = {
+	isDisabled: null,
+	onChange: null,
+};
 SearchSelect.propTypes = {
 	options: PropTypes.oneOfType([
 		PropTypes.array,
 		PropTypes.object,
 	]).isRequired,
+	isDisabled: PropTypes.bool,
+	onChange: PropTypes.func,
 };
 
 export default SearchSelect;

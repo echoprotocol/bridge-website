@@ -141,6 +141,10 @@
 				border-color: #a2adb3;
 			}
 		}
+
+		&--is-disabled {
+			background-color: #fff;
+		}
 	}
 
 	.search-select__menu {
