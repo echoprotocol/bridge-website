@@ -10,16 +10,16 @@ class Info extends React.Component {
 					<div className="row">
 						<div className="col" />
 						<div className="col">
-							<h3 className="info-title">
+							<h3 className="h3 info-title">
 								Learn More About EChO
 							</h3>
 							<p className="info-description">
 								Echo is a generalized smart contract protocol that enables
 								efficient decentralized computing.
 							</p>
-							<button className="btn-light">
+							<a href="https://dev.echo.org/" className="btn-light" target="_blank" rel="noopener noreferrer">
 								<span className="text">Visit Website</span>
-							</button>
+							</a>
 						</div>
 					</div>
 				</div>

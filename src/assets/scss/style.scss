@@ -8,6 +8,7 @@
 
 @import "base/fonts";
 @import "base/base";
+@import "base/icons";
 
 @import "layout/grid";
 @import "layout/footer";
@@ -15,9 +16,15 @@
 @import "components/section";
 @import "components/button";
 @import "components/about";
-@import "components/process";
-@import "components/how-to";
 @import "components/example";
 @import "components/info";
 @import "components/widget";
 @import "components/toast";
+@import "components/request-widget";
+@import "components/widget-form";
+@import "components/search-select";
+@import "components/copy-field";
+@import "components/request-qr";
+@import "components/qr-generator";
+@import "components/default-select";
+@import "components/explaining";
