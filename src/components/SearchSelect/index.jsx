@@ -147,7 +147,7 @@ class SearchSelect extends React.Component {
 
 CustomOption.defaultProps = {
 	props: null,
-	onChange: null,
+	onChange: () => {},
 };
 
 CustomOption.propTypes = {
