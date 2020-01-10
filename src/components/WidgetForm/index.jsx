@@ -17,23 +17,6 @@ export default class WidgetForm extends Component {
 			error: '',
 		},
 		options: [
-			// {
-			// 	label: 'Tokens',
-			// 	options: [
-			// 		{
-			// 			label: 'ECHO',
-			// 			id: '1.3.0',
-			// 		},
-			// 		{
-			// 			label: 'BST',
-			// 			id: '1.3.5',
-			// 		},
-			// 	].map((option) => ({
-			// 		value: option.label,
-			// 		label: option.label,
-			// 		id: option.id,
-			// 	})),
-			// },
 			{
 				label: 'Assets',
 				options: [
