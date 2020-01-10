@@ -61,7 +61,7 @@ export default class WidgetForm extends Component {
 		this.setState({
 			account: {
 				...this.state.account,
-				value: e.target.value,
+				value: e.target.value.toLowerCase(),
 			},
 		});
 	}
