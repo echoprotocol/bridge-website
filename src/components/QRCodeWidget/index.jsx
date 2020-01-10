@@ -100,12 +100,17 @@ class QRCodeWidget extends React.Component {
 
 }
 
+QRCodeWidget.defaultProps = {
+	downloadLink: null,
+};
+
 QRCodeWidget.propTypes = {
 	pay: PropTypes.func.isRequired,
 	isConnected: PropTypes.bool.isRequired,
 	account: PropTypes.string.isRequired,
 	currency: PropTypes.object.isRequired,
 	error: PropTypes.string.isRequired,
+	downloadLink: PropTypes.string,
 };
 
 export default QRCodeWidget;
