@@ -3,6 +3,7 @@ import WidgetFormField from '../WidgetFormField';
 import SearchSelect from '../SearchSelect';
 import CopyField from '../CopyField';
 import { isAccountNameError, isAmountError } from '../../helpers/ValidateHelper';
+import { URL_BASE_PATH } from '../../constants/RouterConstants';
 
 export default class WidgetForm extends Component {
 
@@ -47,7 +48,7 @@ export default class WidgetForm extends Component {
 		this.setState({
 			account: {
 				...this.state.account,
-				value: e.target.value,
+				value: e.target.value.toLowerCase(),
 			},
 		});
 	}
@@ -111,7 +112,7 @@ export default class WidgetForm extends Component {
 		} else {
 			const { account: { value: accountValue }, amount: { value: amountValue }, currencyId } = this.state;
 			this.setState({
-				generatedWidget: `https://bridge.echo.org/receive/${accountValue}/assets-${currencyId}/${amountValue || null}/widget`,
+				generatedWidget: `${URL_BASE_PATH}${accountValue}/asset-${currencyId}/${amountValue || null}/widget`,
 			});
 		}
 	}

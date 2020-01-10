@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Media from 'react-media';
 import CopyButton from '../CopyButton';
 import QrGenerator from '../QrGenerator';
+import { URL_BASE_PATH } from '../../constants/RouterConstants';
 
 const RequestQr = () => (
 	<section className="request-qr">
@@ -25,7 +26,7 @@ const RequestQr = () => (
 					{(matches) => (
 						<Fragment>
 							{matches.medium &&
-								<span className="field-item prefix">https://echo-bridge.io/receive/</span>
+								<span className="field-item prefix">{URL_BASE_PATH}</span>
 							}
 						</Fragment>
 					)}
@@ -39,10 +40,10 @@ const RequestQr = () => (
 						{(matches) => (
 							<Fragment>
 								{matches.large &&
-									<span className="field-item prefix">https://echo-bridge.io/receive/</span>
+									<span className="field-item prefix">{URL_BASE_PATH}</span>
 								}
 								{matches.small &&
-									<span className="field-item prefix">https://echo-bridge.io/receive/</span>}
+									<span className="field-item prefix">{URL_BASE_PATH}</span>}
 							</Fragment>
 						)}
 					</Media>
@@ -73,10 +74,10 @@ const RequestQr = () => (
 						{(matches) => (
 							<Fragment>
 								{matches.large &&
-									<span className="field-item postfix">/qr-code.png</span>
+									<span className="field-item postfix">/widget</span>
 								}
 								{matches.small &&
-									<span className="field-item postfix">/qr-code.png</span>
+									<span className="field-item postfix">/widget</span>
 								}
 							</Fragment>
 						)}
@@ -86,7 +87,7 @@ const RequestQr = () => (
 						render={() =>
 							(
 								<span className="field-copy">
-									<CopyButton color="#ABB2B4" value={'https://echo-bridge.io/receive/{account}/{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/qr-code.png'} />
+									<CopyButton color="#ABB2B4" value={`${URL_BASE_PATH}{account}/{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/widget`} />
 								</span>
 							)}
 					/>
@@ -98,7 +99,7 @@ const RequestQr = () => (
 					{(matches) => (
 						<Fragment>
 							{matches.medium &&
-							<span className="field-item postfix">/qr-code.png</span>
+								<span className="field-item postfix">/widget</span>
 							}
 						</Fragment>
 					)}
@@ -111,7 +112,7 @@ const RequestQr = () => (
 						<Fragment>
 							{matches.medium &&
 								<span className="field-copy">
-									<CopyButton color="#ABB2B4" value={'https://echo-bridge.io/receive/{account}/{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/qr-code.png'} withText />
+									<CopyButton color="#ABB2B4" value={`${URL_BASE_PATH}{“asset”||“token”}-{currency-id-without-prefix}/{amount-without-delimeter}/widget`} withText />
 								</span>
 							}
 						</Fragment>
