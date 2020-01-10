@@ -3,6 +3,7 @@ import WidgetFormField from '../WidgetFormField';
 import SearchSelect from '../SearchSelect';
 import CopyField from '../CopyField';
 import { isAccountNameError, isAmountError } from '../../helpers/ValidateHelper';
+import { URL_BASE_PATH } from '../../constants/RouterConstants';
 
 export default class WidgetForm extends Component {
 
@@ -52,7 +53,7 @@ export default class WidgetForm extends Component {
 				})),
 			},
 		],
-		selectedOptionId: '1.3.0',
+		selectedOptionId: 0,
 	}
 
 	onAccountChange = (e) => {
@@ -123,7 +124,7 @@ export default class WidgetForm extends Component {
 		} else {
 			const { account: { value: accountValue }, amount: { value: amountValue }, selectedOptionId } = this.state;
 			this.setState({
-				generatedWidget: `https://bridge.echo.org/receive/${accountValue}/assets-${selectedOptionId}/${amountValue || null}/widget`,
+				generatedWidget: `${URL_BASE_PATH}${accountValue}/asset-${selectedOptionId}/${amountValue || null}/widget`,
 			});
 		}
 	}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Qr from 'qrcode.react';
-
+import Media from 'react-media';
 import bridge from '../../assets/images/logo.svg';
 
 class QRCodeWidget extends React.Component {
@@ -35,9 +35,25 @@ class QRCodeWidget extends React.Component {
 					</div>
 					<div className="content">
 						<div className="qr">
-							<Qr
-								value={`${currency.get('id')}:${account}?amount=${currency.get('amount')}`}
-								size={350}
+							<Media
+								query="(min-width: 500px)"
+								render={() =>
+									(
+										<Qr
+											value={`${currency.get('id')}:${account}?amount=${currency.get('amount')}`}
+											size={350}
+										/>
+									)}
+							/>
+							<Media
+								query="(max-width: 499px)"
+								render={() =>
+									(
+										<Qr
+											value={`${currency.get('id')}:${account}?amount=${currency.get('amount')}`}
+											size={150}
+										/>
+									)}
 							/>
 						</div>
 						<div className="reciever">
@@ -72,7 +88,7 @@ class QRCodeWidget extends React.Component {
 
 				</div>
 
-				<div className="footer">© Copyright 2019</div>
+				<div className="footer">© Copyright 2020</div>
 			</div>
 		);
 	}

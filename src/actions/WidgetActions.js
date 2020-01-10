@@ -85,10 +85,8 @@ class WidgetActions extends BaseActionsClass {
 
 	payWithBridge(account) {
 		return async (dispatch, getState) => {
-
 			dispatch(this.setValue('error', '', false));
 			const currency = getState().widget.get('currency');
-
 			if (!Number(currency.get('amount'))) {
 				dispatch(this.setValue('error', 'Amount should be more than 0', false));
 				return;
