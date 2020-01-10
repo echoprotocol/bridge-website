@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import DefaultSelect from '../DefaultSelect';
 import CopyField from '../CopyField';
+import { URL_BASE_PATH } from '../../constants/RouterConstants';
 
 export default class QrGenerator extends Component {
 
@@ -14,8 +15,8 @@ export default class QrGenerator extends Component {
 			label: option.label,
 		})),
 		account: 'test',
-		currency: 'assets',
-		id: '1',
+		currency: 'asset',
+		id: '0',
 		amount: '-',
 	}
 
@@ -53,7 +54,7 @@ export default class QrGenerator extends Component {
 					</div>
 					<div className="fields">
 						<span className="static-field">
-							https://bridge.echo.org/receive/
+							{URL_BASE_PATH}
 						</span>
 						<input type="text" className="dynamic-field account" value={account} onChange={this.onAccountChange} />
 						<span className="static-field">/</span>
@@ -77,7 +78,7 @@ export default class QrGenerator extends Component {
 				<div className="qr-generator-result">
 					<h4 className="h4 title">Result</h4>
 					<CopyField
-						value={`https://bridge.echo.org/receive/${account}/${currency}-${id}/${amount}/widget`}
+						value={`${URL_BASE_PATH}${account}/${currency}-${id}/${amount}/widget`}
 						iconColor="#ABB2B4"
 						textColor="#4C8BF5"
 						backgroundColor="#fff"

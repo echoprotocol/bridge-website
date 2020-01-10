@@ -35,7 +35,6 @@ class QRCodeWidget extends React.Component {
 			this.props.setCurrency('asset', '0', amount);
 			return;
 		}
-
 		this.props.setCurrency(type, id, amount);
 	}
 
@@ -50,7 +49,6 @@ class QRCodeWidget extends React.Component {
 			pay,
 			downloadLink,
 		} = this.props;
-
 		return (
 			<QRCodeWidgetComponent
 				pay={pay}
