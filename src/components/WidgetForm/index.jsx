@@ -19,23 +19,6 @@ export default class WidgetForm extends Component {
 		},
 		options: [
 			{
-				label: 'Tokens',
-				options: [
-					{
-						label: 'ECHO',
-						id: '1.3.0',
-					},
-					{
-						label: 'BST',
-						id: '1.3.5',
-					},
-				].map((option) => ({
-					value: option.label,
-					label: option.label,
-					id: option.id,
-				})),
-			},
-			{
 				label: 'Assets',
 				options: [
 					{
@@ -43,8 +26,12 @@ export default class WidgetForm extends Component {
 						id: '1.3.0',
 					},
 					{
-						label: 'PST',
-						id: '1.3.5',
+						label: 'EETH',
+						id: '1.3.1',
+					},
+					{
+						label: 'EBTC',
+						id: '1.3.2',
 					},
 				].map((option) => ({
 					value: option.label,
@@ -53,7 +40,7 @@ export default class WidgetForm extends Component {
 				})),
 			},
 		],
-		selectedOptionId: 0,
+		currencyId: '0',
 	}
 
 	onAccountChange = (e) => {
@@ -88,8 +75,9 @@ export default class WidgetForm extends Component {
 	}
 
 	onSelectChange=(optionSelected) => {
+		const id = optionSelected.id.split('.')[2];
 		this.setState({
-			selectedOptionId: optionSelected.id,
+			currencyId: id,
 		});
 	}
 
@@ -122,9 +110,9 @@ export default class WidgetForm extends Component {
 				},
 			});
 		} else {
-			const { account: { value: accountValue }, amount: { value: amountValue }, selectedOptionId } = this.state;
+			const { account: { value: accountValue }, amount: { value: amountValue }, currencyId } = this.state;
 			this.setState({
-				generatedWidget: `${URL_BASE_PATH}${accountValue}/asset-${selectedOptionId}/${amountValue || null}/widget`,
+				generatedWidget: `${URL_BASE_PATH}${accountValue}/asset-${currencyId}/${amountValue || null}/widget`,
 			});
 		}
 	}
@@ -158,7 +146,7 @@ export default class WidgetForm extends Component {
 					onBlur={this.removeAmountError}
 				/>
 				<div className="search-select-wrap">
-					<SearchSelect options={this.state.options} onChange={this.onSelectChange} isDisabled />
+					<SearchSelect options={this.state.options} onChange={this.onSelectChange} />
 				</div>
 				{
 					this.state.generatedWidget &&
