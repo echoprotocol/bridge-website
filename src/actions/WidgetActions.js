@@ -91,6 +91,11 @@ class WidgetActions extends BaseActionsClass {
 				dispatch(this.setValue('error', 'Amount should be more than 0', false));
 				return;
 			}
+			if (!window.echojslib) {
+				dispatch(this.setValue('error', 'Install Bridge Extension to proceed', false));
+				dispatch(this.setValue('downloadLink', 'https://chrome.google.com/webstore/detail/echo-bridge/ginklfodpcgldnicehmlpehfmgjhbdcl', false));
+				return;
+			}
 			const access = await window.echojslib.extension.getAccess();
 
 			if (!access) {

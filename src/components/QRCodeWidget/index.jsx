@@ -23,6 +23,7 @@ class QRCodeWidget extends React.Component {
 			account, error,
 			currency,
 			isConnected,
+			downloadLink,
 		} = this.props;
 		return (
 			<div className="widget-page">
@@ -83,6 +84,10 @@ class QRCodeWidget extends React.Component {
 							<div className="toast-content">
 								{error}
 							</div>
+							{
+								downloadLink &&
+								<a className="toast-link" href={downloadLink}>Download</a>
+							}
 						</div>
 					}
 
@@ -95,12 +100,17 @@ class QRCodeWidget extends React.Component {
 
 }
 
+QRCodeWidget.defaultProps = {
+	downloadLink: null,
+};
+
 QRCodeWidget.propTypes = {
 	pay: PropTypes.func.isRequired,
 	isConnected: PropTypes.bool.isRequired,
 	account: PropTypes.string.isRequired,
 	currency: PropTypes.object.isRequired,
 	error: PropTypes.string.isRequired,
+	downloadLink: PropTypes.string,
 };
 
 export default QRCodeWidget;
