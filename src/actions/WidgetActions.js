@@ -92,7 +92,7 @@ class WidgetActions extends BaseActionsClass {
 				return;
 			}
 			if (!window.echojslib) {
-				dispatch(this.setValue('error', "Extension isn't installed", false));
+				dispatch(this.setValue('error', 'Install Bridge Extension to proceed', false));
 				dispatch(this.setValue('downloadLink', 'https://chrome.google.com/webstore/detail/echo-bridge/ginklfodpcgldnicehmlpehfmgjhbdcl', false));
 				return;
 			}
