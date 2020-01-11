@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Qr from 'qrcode.react';
-
+import Media from 'react-media';
 import bridge from '../../assets/images/logo.svg';
 
 class QRCodeWidget extends React.Component {
@@ -23,6 +23,7 @@ class QRCodeWidget extends React.Component {
 			account, error,
 			currency,
 			isConnected,
+			downloadLink,
 		} = this.props;
 		return (
 			<div className="widget-page">
@@ -35,9 +36,25 @@ class QRCodeWidget extends React.Component {
 					</div>
 					<div className="content">
 						<div className="qr">
-							<Qr
-								value={`${currency.get('id')}:${account}?amount=${currency.get('amount')}`}
-								size={350}
+							<Media
+								query="(min-width: 500px)"
+								render={() =>
+									(
+										<Qr
+											value={`${currency.get('id')}:${account}?amount=${currency.get('amount')}`}
+											size={350}
+										/>
+									)}
+							/>
+							<Media
+								query="(max-width: 499px)"
+								render={() =>
+									(
+										<Qr
+											value={`${currency.get('id')}:${account}?amount=${currency.get('amount')}`}
+											size={150}
+										/>
+									)}
 							/>
 						</div>
 						<div className="reciever">
@@ -67,17 +84,25 @@ class QRCodeWidget extends React.Component {
 							<div className="toast-content">
 								{error}
 							</div>
+							{
+								downloadLink &&
+								<a className="toast-link" href={downloadLink}>Download</a>
+							}
 						</div>
 					}
 
 				</div>
 
-				<div className="footer">© Copyright 2019</div>
+				<div className="footer">© Copyright 2020</div>
 			</div>
 		);
 	}
 
 }
+
+QRCodeWidget.defaultProps = {
+	downloadLink: null,
+};
 
 QRCodeWidget.propTypes = {
 	pay: PropTypes.func.isRequired,
@@ -85,6 +110,7 @@ QRCodeWidget.propTypes = {
 	account: PropTypes.string.isRequired,
 	currency: PropTypes.object.isRequired,
 	error: PropTypes.string.isRequired,
+	downloadLink: PropTypes.string,
 };
 
 export default QRCodeWidget;

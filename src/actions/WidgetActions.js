@@ -85,12 +85,15 @@ class WidgetActions extends BaseActionsClass {
 
 	payWithBridge(account) {
 		return async (dispatch, getState) => {
-
 			dispatch(this.setValue('error', '', false));
 			const currency = getState().widget.get('currency');
-
 			if (!Number(currency.get('amount'))) {
 				dispatch(this.setValue('error', 'Amount should be more than 0', false));
+				return;
+			}
+			if (!window.echojslib) {
+				dispatch(this.setValue('error', 'Install Bridge Extension to proceed', false));
+				dispatch(this.setValue('downloadLink', 'https://chrome.google.com/webstore/detail/echo-bridge/ginklfodpcgldnicehmlpehfmgjhbdcl', false));
 				return;
 			}
 			const access = await window.echojslib.extension.getAccess();

@@ -35,7 +35,6 @@ class QRCodeWidget extends React.Component {
 			this.props.setCurrency('asset', '0', amount);
 			return;
 		}
-
 		this.props.setCurrency(type, id, amount);
 	}
 
@@ -48,8 +47,8 @@ class QRCodeWidget extends React.Component {
 			error,
 			isConnected,
 			pay,
+			downloadLink,
 		} = this.props;
-
 		return (
 			<QRCodeWidgetComponent
 				pay={pay}
@@ -57,13 +56,16 @@ class QRCodeWidget extends React.Component {
 				currency={currency}
 				error={error}
 				isConnected={isConnected}
-
+				downloadLink={downloadLink}
 			/>
 		);
 	}
 
 }
 
+QRCodeWidget.defaultProps = {
+	downloadLink: null,
+};
 QRCodeWidget.propTypes = {
 	match: PropTypes.object.isRequired,
 	pay: PropTypes.func.isRequired,
@@ -72,6 +74,7 @@ QRCodeWidget.propTypes = {
 	currency: PropTypes.object.isRequired,
 	error: PropTypes.string.isRequired,
 	isConnected: PropTypes.bool.isRequired,
+	downloadLink: PropTypes.string,
 };
 
 export default withRouter(connect(
@@ -79,6 +82,7 @@ export default withRouter(connect(
 		currency: state.widget.get('currency'),
 		error: state.widget.get('error'),
 		isConnected: state.global.get('isConnected'),
+		downloadLink: state.widget.get('downloadLink'),
 	}),
 	(dispatch) => ({
 		pay: (account) => dispatch(WidgetActions.payWithBridge(account)),
