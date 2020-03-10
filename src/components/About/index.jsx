@@ -19,14 +19,14 @@ class About extends React.Component {
 							<h4 className="tagline">Brings ECHO to your browser</h4>
 							<div className="prezentation">
 								<p>
-								Bridge is a tool designed to make running Echo dApps for people as
-								easy as possible.
+									Bridge is a tool designed to make running Echo dApps for people as
+									easy as possible.
 								</p>
 								<p>
-								As an extension for your browser, Bridge can act as a dedicated
-								Echo wallet, allowing you to access and manage your account data,
-								manage multiple accounts, and use it for making, signing
-								transactions & viewing your account history.
+									As an extension for your browser, Bridge can act as a dedicated
+									Echo wallet, allowing you to access and manage your account data,
+									manage multiple accounts, and use it for making, signing
+									transactions & viewing your account history.
 								</p>
 							</div>
 							<div className="about-buttons">
