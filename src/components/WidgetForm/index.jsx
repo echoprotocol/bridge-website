@@ -50,7 +50,7 @@ export default class WidgetForm extends Component {
 				...this.state.account,
 				value: e.target.value.toLowerCase(),
 			},
-		});
+		}, this.generateLink);
 	}
 
 	onAmountChange = (e) => {
@@ -70,7 +70,7 @@ export default class WidgetForm extends Component {
 					error: false,
 					value,
 				},
-			});
+			}, this.generateLink);
 		}
 	}
 
@@ -78,7 +78,7 @@ export default class WidgetForm extends Component {
 		const id = optionSelected.id.split('.')[2];
 		this.setState({
 			currencyId: id,
-		});
+		}, this.generateLink);
 	}
 
 	removeAcountError = () => {
@@ -99,6 +99,13 @@ export default class WidgetForm extends Component {
 		});
 	}
 
+	generateLink = () => {
+		const { account: { value: accountValue }, amount: { value: amountValue }, currencyId } = this.state;
+		this.setState({
+			generatedWidget: `${URL_BASE_PATH}${accountValue}/asset-${currencyId}/${amountValue || null}/widget`,
+		});
+	}
+
 	submitForm = (e) => {
 		e.preventDefault();
 		const accountFailed = isAccountNameError(this.state.account.value);
@@ -110,10 +117,7 @@ export default class WidgetForm extends Component {
 				},
 			});
 		} else {
-			const { account: { value: accountValue }, amount: { value: amountValue }, currencyId } = this.state;
-			this.setState({
-				generatedWidget: `${URL_BASE_PATH}${accountValue}/asset-${currencyId}/${amountValue || null}/widget`,
-			});
+			this.generateLink();
 		}
 	}
 
@@ -164,4 +168,3 @@ export default class WidgetForm extends Component {
 	}
 
 }
-
