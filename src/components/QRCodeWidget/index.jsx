@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Qr from 'qrcode.react';
 import Media from 'react-media';
 import bridge from '../../assets/images/logo.svg';
+import { INDEX_PATH } from '../../constants/RouterConstants';
 
 class QRCodeWidget extends React.Component {
 
@@ -27,9 +28,9 @@ class QRCodeWidget extends React.Component {
 		} = this.props;
 		return (
 			<div className="widget-page">
-				<div className="header">
+				<a className="header" href={INDEX_PATH} >
 					<img className="logo" src={bridge} alt="Bridge" />
-				</div>
+				</a>
 				<div className="body">
 					<div className="info">
 						Brings ECHO to your browser

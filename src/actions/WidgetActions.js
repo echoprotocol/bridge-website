@@ -13,6 +13,7 @@ import {
 	ASSET_PREFIX,
 	CONTRACT_PREFIX,
 	COMMITTEE_ACCOUNT,
+	CORE_ASSET_OBJECT,
 } from '../constants/GlobalConstants';
 
 class WidgetActions extends BaseActionsClass {
@@ -25,9 +26,9 @@ class WidgetActions extends BaseActionsClass {
 
 		const [symbol, decimals] = await Promise.all([
 			echo.api
-				.callContractNoChangingState(contractId, '1.2.12', CORE_ASSET, keccak256('symbol()').substr(0, 8)),
+				.callContractNoChangingState(contractId, '1.2.12', CORE_ASSET_OBJECT, keccak256('symbol()').substr(0, 8)),
 			echo.api
-				.callContractNoChangingState(contractId, '1.2.12', CORE_ASSET, keccak256('decimals()').substr(0, 8)),
+				.callContractNoChangingState(contractId, '1.2.12', CORE_ASSET_OBJECT, keccak256('decimals()').substr(0, 8)),
 		]);
 
 		return {
