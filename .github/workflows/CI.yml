@@ -16,7 +16,7 @@ jobs:
         TAG=`echo $GITHUB_REF| sed 's/\//\ /g' | awk '{print $3}'`
         sed -i  "s|latest|"$TAG"|g" kubernetes/deployment.yml
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: echoprotocol/bridge-website
         username: ${{ secrets.DOCKER_USERNAME }}
